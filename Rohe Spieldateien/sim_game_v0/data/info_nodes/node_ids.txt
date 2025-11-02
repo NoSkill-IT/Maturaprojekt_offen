@@ -1,0 +1,7 @@
+round_sequence
+employees
+production
+resources
+finances
+rnd
+events

@@ -1,0 +1,13 @@
+{
+	"num_id":2,
+	"tree_members":[
+		["qc_alpha_unlock"],
+		["qc_improve_efficiency1","qc_improve_quality1"],
+		["qc_beta_unlock"],
+		["qc_reduce_cost1","qc_reduce_employee_requirement1"],
+		["qc_reduce_maintenance1","qc_gamma_unlock","qc_reduce_resource_consumption1"],
+		["qc_improve_efficiency2","qc_improve_quality2"],
+		["qc_delta_unlock"],
+		["qc_reduce_cost2","qc_reduce_employee_requirement2"],
+		["qc_reduce_maintenance2","qc_omega_unlock","qc_reduce_resource_consumption2"]]
+}

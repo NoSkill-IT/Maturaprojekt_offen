@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7oyj61ap1bic"]
+
+[ext_resource type="Script" uid="uid://cmr6tt1r1ny7u" path="res://scripts/custom_nodes/info_node.gd" id="1_4ei7t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8mce"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.47397572, 0.47397578, 0.47397548, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="background" type="Panel"]
+custom_minimum_size = Vector2(455, 320)
+offset_right = 455.0
+offset_bottom = 320.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_n8mce")
+script = ExtResource("1_4ei7t")
+
+[node name="contents" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(435, 0)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 50.0
+theme_override_constants/separation = 10
+
+[node name="title" type="Label" parent="contents"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+
+[node name="info" type="RichTextLabel" parent="contents"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 15
+theme_override_font_sizes/bold_font_size = 15
+theme_override_font_sizes/bold_italics_font_size = 15
+theme_override_font_sizes/italics_font_size = 15
+theme_override_font_sizes/mono_font_size = 15
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 2

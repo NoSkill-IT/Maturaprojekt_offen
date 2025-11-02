@@ -1,0 +1,17 @@
+{
+	"resource": "sugar",
+	"duration_range": [
+		4,
+		4
+	],
+	"cancel_notice": 1,
+	"base_values": {
+		"quality": 0.25,
+		"reliability": 1.2,
+		"base_price": 1.17,
+		"capacity": 724980,
+		"active": true,
+		"active_contracts": 0,
+		"contracts": []
+	}
+}

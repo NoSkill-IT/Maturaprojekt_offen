@@ -1,0 +1,10 @@
+{
+	"type": "func",
+	"event_name": "reduce_capacity_s_event",
+	"num_id":0,
+	"variable":"",
+	"new_val":[],
+	"function_name":"event_reduce_capacity",
+	"parameters":[],	
+	"execution_time":"before"
+}

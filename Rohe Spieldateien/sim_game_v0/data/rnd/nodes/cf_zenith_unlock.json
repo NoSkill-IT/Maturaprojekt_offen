@@ -1,0 +1,29 @@
+{
+	"base_price": 25000000,
+	"parents": ["cf_elite_unlock"],
+	"parent_requirement_type":["and",0],	
+	"upgrade_time":100000,
+	"base_success_probability":0.98,
+	"name":"cf_zenith_unlock",
+	"start_unlocked":false,
+	"auto_activate":true,
+	"employee_type":"rnd",
+	"buy_requirements":
+	{
+		"type":"req",
+		"variable":"production_methods.cocoafusion_apex.unlocked_machines",
+		"comp": ">",
+		"value":0
+	},
+	"effects":
+	[
+		{
+			"effect_type":"var",
+			"effect_requirements":{"type":"none"},
+			"period":0,
+			"variable":"production_methods.cocoafusion_zenith.unlocked",
+			"value":true,
+			"op":"set",
+		}
+	]
+}

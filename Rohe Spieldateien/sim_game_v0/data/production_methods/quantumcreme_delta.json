@@ -1,0 +1,12 @@
+{
+	"rwpm":13,
+	"unlocked":false,
+	"kgph":160,
+	"active_machines":0,
+	"price_per_machine":300000,
+	"unlocked_machines":0,
+	"maintenance_cost":10000,
+	"ingredients":{"cocoa":1.1,"sugar":0.3,"nuts":0.1,"milk_powder":0.3},
+	"quality_modifier":0.25,
+	"priority":13
+}

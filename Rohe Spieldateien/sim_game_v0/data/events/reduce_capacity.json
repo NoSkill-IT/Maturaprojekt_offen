@@ -1,0 +1,17 @@
+{
+	"event_name":"reduce_capacity",
+	"num_id": 5,
+	"affected_variables":[],
+	"delays":[],
+	"phase_duration_ranges":[[1,1]],
+	"affected_from_random":[],
+	"phase_base_values":[],
+	"value_random_range":[[0,0]],
+	"special_events":[["reduce_capacity_s_event"],[]],
+	"volatility":[],
+	"base_probability":0.04,
+	"excludes":[],
+	"requirement":{
+		"type":"none"
+	}
+}

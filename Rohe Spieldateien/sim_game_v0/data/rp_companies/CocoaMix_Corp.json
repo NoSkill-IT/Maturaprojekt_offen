@@ -1,0 +1,17 @@
+{
+	"resource": "cocoa",
+	"duration_range": [
+		1,
+		6
+	],
+	"cancel_notice": 2,
+	"base_values": {
+		"quality": 0.17999999999999994,
+		"reliability": 1.02,
+		"base_price": 7.49,
+		"capacity": 764876,
+		"active": true,
+		"active_contracts": 0,
+		"contracts": []
+	}
+}

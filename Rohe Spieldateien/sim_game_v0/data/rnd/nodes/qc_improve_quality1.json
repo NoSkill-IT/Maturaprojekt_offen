@@ -1,0 +1,36 @@
+{
+	"base_price": 250000,
+	"parents": ["qc_alpha_unlock"],
+	"parent_requirement_type":["and",0],
+	"upgrade_time":1500,
+	"base_success_probability":1,
+	"name":"qc_improve_quality1",
+	"start_unlocked":false,
+	"auto_activate":true,
+	"employee_type":"rnd",
+	"buy_requirements":
+	{
+		"type":"req",
+		"variable":"rnd_trees.quantumcreme_production.all_nodes.1.0.unlocked",
+		"comp":"==",
+		"value":false,
+	},
+	"effects":[
+		{
+			"effect_type":"var",
+			"effect_requirements":{"type":"none"},
+			"period":0,
+			"variable":"production_methods.quantumcreme_alpha.quality_modifier",
+			"value":0.05,
+			"op":"add",
+		},
+		{
+			"effect_type":"var",
+			"effect_requirements":{"type":"none"},
+			"period":0,
+			"variable":"production_methods.quantumcreme_beta.output_per_hour",
+			"value":0.05,
+			"op":"add",
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"type": "",			#either "func" or "var": if "func": "variable" and "new_val" aren't needed, 
+						 else "function_name" and "parameters" arent needed
+						
+	"event_name": "",	#identifier for this event
+	
+	"variable":"",		#name of the affected Variable
+	
+	"new_val":[],		#either array or single Value for the Variable modified,
+						 Array[0] base value, Array[1] affected by random, Array[2] volatility 
+	
+	"function_name":"",	#name of the Function to be executed
+	
+	"parameters":[],	#list of values for the parameters of the function, same composition as "new_val"
+	
+	"execution_time":""	#"before" if the event is to be executed before the player makes his decision, "after" if not
+}

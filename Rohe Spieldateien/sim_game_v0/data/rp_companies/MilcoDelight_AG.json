@@ -1,0 +1,17 @@
+{
+	"resource": "milk_powder",
+	"duration_range": [
+		1,
+		8
+	],
+	"cancel_notice": 1,
+	"base_values": {
+		"quality": -0.07999999999999996,
+		"reliability": 0.86,
+		"base_price": 6.48,
+		"capacity": 872420,
+		"active": true,
+		"active_contracts": 0,
+		"contracts": []
+	}
+}

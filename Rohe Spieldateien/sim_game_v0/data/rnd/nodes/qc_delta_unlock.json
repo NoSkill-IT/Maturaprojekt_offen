@@ -1,0 +1,29 @@
+{
+	"base_price": 10000000,
+	"parents": ["qc_gamma_unlock"],
+	"parent_requirement_type":["and",0],	
+	"upgrade_time":40000,
+	"base_success_probability":0.98,
+	"name":"qc_delta_unlock",
+	"start_unlocked":false,
+	"auto_activate":true,
+	"employee_type":"rnd",
+	"buy_requirements":
+	{
+		"type":"req",
+		"variable":"production_methods.quantumcreme_gamma.unlocked_machines",
+		"comp": ">",
+		"value":0
+	},
+	"effects":
+	[
+		{
+			"effect_type":"var",
+			"effect_requirements":{"type":"none"},
+			"period":0,
+			"variable":"production_methods.quantumcreme_delta.unlocked",
+			"value":true,
+			"op":"set",
+		}
+	]
+}

@@ -1,0 +1,270 @@
+[gd_scene load_steps=4 format=3 uid="uid://4elj14wqv6jx"]
+
+[ext_resource type="Script" uid="uid://d2m36bhjri567" path="res://scripts/active_game.gd" id="1_r10ur"]
+[ext_resource type="Theme" uid="uid://vtujw8nrq1fy" path="res://scenes/theme.tres" id="2_xe1va"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xe1va"]
+bg_color = Color(0.005005935, 0.0024124274, 0.012617188, 1)
+
+[node name="ActiveGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r10ur")
+
+[node name="money_display" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 21.0
+
+[node name="main_tabs" type="TabContainer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme = ExtResource("2_xe1va")
+tab_alignment = 1
+current_tab = 2
+
+[node name="start" type="Control" parent="main_tabs"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="events" type="Control" parent="main_tabs"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="events_container" type="HBoxContainer" parent="main_tabs/events"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1870.0
+offset_bottom = 1000.0
+theme_override_constants/separation = 10
+
+[node name="overview" type="VBoxContainer" parent="main_tabs/events/events_container"]
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+
+[node name="base_event_overview" type="Label" parent="main_tabs/events/events_container/overview"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Event overview"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="base_event_scroll" type="ScrollContainer" parent="main_tabs/events/events_container/overview"]
+custom_minimum_size = Vector2(1200, 600)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="base_event_container" type="GridContainer" parent="main_tabs/events/events_container/overview/base_event_scroll"]
+clip_contents = true
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+columns = 3
+
+[node name="short_event_overview" type="Label" parent="main_tabs/events/events_container/overview"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Event functions"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="short_event_scroll" type="ScrollContainer" parent="main_tabs/events/events_container/overview"]
+custom_minimum_size = Vector2(1200, 200)
+layout_mode = 2
+vertical_scroll_mode = 0
+
+[node name="short_event_container" type="HBoxContainer" parent="main_tabs/events/events_container/overview/short_event_scroll"]
+custom_minimum_size = Vector2(1200, 200)
+layout_mode = 2
+
+[node name="active_events" type="VBoxContainer" parent="main_tabs/events/events_container"]
+custom_minimum_size = Vector2(610, 0)
+layout_mode = 2
+
+[node name="active_events_title" type="Label" parent="main_tabs/events/events_container/active_events"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Active Events"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="active_events_scroll" type="ScrollContainer" parent="main_tabs/events/events_container/active_events"]
+custom_minimum_size = Vector2(0, 879)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="active_events_container" type="VBoxContainer" parent="main_tabs/events/events_container/active_events/active_events_scroll"]
+layout_mode = 2
+
+[node name="event_info_panel" type="Panel" parent="main_tabs/events"]
+visible = false
+layout_mode = 0
+offset_left = 1220.0
+offset_right = 1920.0
+offset_bottom = 1050.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xe1va")
+
+[node name="info_panel_container" type="VBoxContainer" parent="main_tabs/events/event_info_panel"]
+custom_minimum_size = Vector2(680, 0)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 690.0
+offset_bottom = 50.0
+
+[node name="name" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+
+[node name="description" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+
+[node name="affected_variables" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="probability" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
+layout_mode = 2
+
+[node name="active" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="total_duration" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="phases" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="excludes" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="requirements" type="RichTextLabel" parent="main_tabs/events/event_info_panel/info_panel_container"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="close" type="Button" parent="main_tabs/events/event_info_panel"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 0
+offset_left = 675.0
+offset_right = 700.0
+offset_bottom = 36.0
+text = "✗"
+
+[node name="active_event_info" type="Panel" parent="main_tabs/events"]
+visible = false
+layout_mode = 0
+offset_right = 700.0
+offset_bottom = 1050.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xe1va")
+
+[node name="info_panel_container" type="VBoxContainer" parent="main_tabs/events/active_event_info"]
+custom_minimum_size = Vector2(680, 0)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 690.0
+offset_bottom = 50.0
+
+[node name="name" type="Label" parent="main_tabs/events/active_event_info/info_panel_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+
+[node name="active" type="Label" parent="main_tabs/events/active_event_info/info_panel_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="timeline" type="Tree" parent="main_tabs/events/active_event_info/info_panel_container"]
+custom_minimum_size = Vector2(0, 800)
+layout_mode = 2
+columns = 3
+allow_search = false
+scroll_horizontal_enabled = false
+
+[node name="close" type="Button" parent="main_tabs/events/active_event_info"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 0
+offset_left = 675.0
+offset_right = 700.0
+offset_bottom = 36.0
+text = "✗"
+
+[node name="production" type="Control" parent="main_tabs"]
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="production_methods" type="VBoxContainer" parent="main_tabs/production"]
+custom_minimum_size = Vector2(930, 1000)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 950.0
+offset_bottom = 1020.0
+theme = ExtResource("2_xe1va")
+
+[node name="production_method_title" type="Label" parent="main_tabs/production/production_methods"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+
+[node name="pm_scroll" type="ScrollContainer" parent="main_tabs/production/production_methods"]
+custom_minimum_size = Vector2(0, 900)
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="pm_overview" type="VBoxContainer" parent="main_tabs/production/production_methods/pm_scroll"]
+custom_minimum_size = Vector2(930, 0)
+layout_mode = 2
+
+[node name="employees_preview" type="VBoxContainer" parent="main_tabs/production"]
+custom_minimum_size = Vector2(870, 1000)
+layout_mode = 0
+offset_left = 1036.0
+offset_top = 3.0
+offset_right = 1906.0
+offset_bottom = 1003.0
+
+[node name="employee_group_title" type="Label" parent="main_tabs/production/employees_preview"]
+layout_mode = 2
+
+[node name="eg_overview" type="GridContainer" parent="main_tabs/production/employees_preview"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="resources" type="Control" parent="main_tabs"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="other_companies" type="Control" parent="main_tabs"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="rnd" type="Control" parent="main_tabs"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 5
+
+[node name="settings" type="Control" parent="main_tabs"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 6
+
+[connection signal="pressed" from="main_tabs/events/event_info_panel/close" to="." method="_on_close_event_info_pressed"]
+[connection signal="pressed" from="main_tabs/events/active_event_info/close" to="." method="_on_close_active_event_pressed"]

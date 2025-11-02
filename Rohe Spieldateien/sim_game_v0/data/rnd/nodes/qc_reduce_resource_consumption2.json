@@ -1,0 +1,36 @@
+{
+	"base_price": 10000000,
+	"parents": ["qc_delta_unlock","qc_reduce_resource_consumption1"],
+	"parent_requirement_type":["and",0],
+	"upgrade_time":2000,
+	"base_success_probability":1,
+	"name":"qc_reduce_resource_consumption2",
+	"start_unlocked":false,
+	"auto_activate":true,
+	"employee_type":"rnd",
+	"buy_requirements":
+	{
+		"type":"req",
+		"variable":"rnd_trees.quantumcreme_production.all_nodes.7.1.unlocked",
+		"comp":"==",
+		"value":false,
+	},
+	"effects":[
+		{
+			"effect_type":"var",
+			"effect_requirements":{"type":"none"},
+			"period":0,
+			"variable":"production_methods.quantumcreme_delta.ingredient_per_kg",
+			"value":{"cocoa":1.0,"nuts":0.08,"milk_powder":0.3,"sugar":0.3},
+			"op":"set",
+		},
+		{
+			"effect_type":"var",
+			"effect_requirements":{"type":"none"},
+			"period":0,
+			"variable":"production_methods.quantumcreme_omega.ingredient_per_kg",
+			"value":{"cocoa":1.1,"nuts":0.09,"milk_powder":0.35,"sugar":0.35},
+			"op":"set",
+		}
+	]
+}

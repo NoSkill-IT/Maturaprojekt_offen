@@ -1,0 +1,12 @@
+{
+	"position":[2,0],
+	"size":[1,1],
+	"title":{
+		"en_us":"Production",
+		"de_ch":"Produktion"
+	},
+	"info":{
+		"en_us":"Production methods are unlocked and in the RnD Tab.\nThere are three Upgrade lines, The ChocoLine focusses on quantity over quality, the CocoaFusion provides a balance of both, whilst the QuantumCrème maximises quality.\nYou can activate and deactivate machines at will, you don't have to pay maintenance for inactive ones.\nThe machines will produce as much as possible automatically until the bottleneck of either machine number, employee number, or resource stock is reached.\nIn order to produce chocolate, you need:\n - All resources in stock (so you need a contract before this round)\n - Employees\n - Machines\n\nYou'll be able to see the predicted produced chocolate in the \"Production and Employees\" page, and the predicted sales in the \"Finances\" Page",
+		"de_ch":"Produktionsmethoden werden freigeschaltet und befinden sich im F&E-Tab.\nEs gibt drei Upgrade-Linien: Die ChocoLine konzentriert sich auf Menge statt Qualität, die CocoaFusion bietet eine Balance von beidem, während die QuantumCrème die Qualität maximiert.\nSie können Maschinen nach Belieben ein- und ausschalten, für inaktive Maschinen müssen Sie keine Wartung zahlen.\nDie Maschinen werden automatisch so viel wie möglich produzieren, bis die Grenze durch Maschinenanzahl, Mitarbeiteranzahl oder Ressourcenbestand erreicht ist.\nUm Schokolade herzustellen, benötigen Sie:\n - Alle Ressourcen auf Lager (daher ist ein Vertrag vor dieser Runde notwendig)\n - Mitarbeiter\n - Maschinen\n\nSie können die voraussichtliche Produktionsmenge an Schokolade auf der Seite \"Produktion und Mitarbeiter\" sehen und die voraussichtlichen Verkäufe auf der Seite \"Finanzen\"."
+	}
+}

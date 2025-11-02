@@ -1,0 +1,123 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2ivjmkultkac"]
+
+[ext_resource type="Script" uid="uid://dtg6uer2k60ae" path="res://scripts/custom_nodes/production_method_gui.gd" id="1_l263g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfut8"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="production_method_gui" type="Panel"]
+custom_minimum_size = Vector2(930, 320)
+offset_right = 930.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qfut8")
+script = ExtResource("1_l263g")
+
+[node name="grid" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(910, 270)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 20.0
+offset_bottom = 50.0
+columns = 2
+
+[node name="infos" type="VBoxContainer" parent="grid"]
+custom_minimum_size = Vector2(453, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="name" type="Label" parent="grid/infos"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+
+[node name="required_workers" type="Label" parent="grid/infos"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="price_info" type="Label" parent="grid/infos"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="recipe" type="Label" parent="grid/infos"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="quality_modifier" type="Label" parent="grid/infos"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="current_max_production" type="Label" parent="grid/infos"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+autowrap_mode = 3
+
+[node name="numbers" type="GridContainer" parent="grid/infos"]
+layout_mode = 2
+columns = 3
+
+[node name="active_machines_name" type="Label" parent="grid/infos/numbers"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="active_machines_num" type="Label" parent="grid/infos/numbers"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="active_machines_new" type="SpinBox" parent="grid/infos/numbers"]
+layout_mode = 2
+max_value = 10000.0
+rounded = true
+
+[node name="buy_machines" type="Label" parent="grid/infos/numbers"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="machines_bought" type="Label" parent="grid/infos/numbers"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="buy_amount" type="SpinBox" parent="grid/infos/numbers"]
+layout_mode = 2
+max_value = 10000.0
+rounded = true
+
+[node name="buttons" type="VBoxContainer" parent="grid"]
+custom_minimum_size = Vector2(453, 0)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="priority_max" type="Button" parent="grid/buttons"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+text = "Set to highest prior"
+
+[node name="priority_up" type="Button" parent="grid/buttons"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="priority_down" type="Button" parent="grid/buttons"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="disable" type="Button" parent="grid/buttons"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="cancel" type="Button" parent="grid/buttons"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="confirm_active" type="Button" parent="grid/buttons"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="confirm_purchase" type="Button" parent="grid/buttons"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[connection signal="pressed" from="grid/buttons/priority_max" to="." method="_on_priority_max"]
+[connection signal="pressed" from="grid/buttons/priority_up" to="." method="_on_priority_up"]
+[connection signal="pressed" from="grid/buttons/priority_down" to="." method="on_priority_down"]
+[connection signal="pressed" from="grid/buttons/disable" to="." method="_on_disable"]
+[connection signal="pressed" from="grid/buttons/cancel" to="." method="_on_cancel"]
+[connection signal="pressed" from="grid/buttons/confirm_active" to="." method="_on_confirm_active"]
+[connection signal="pressed" from="grid/buttons/confirm_purchase" to="." method="_on_confirm_purchase_pressed"]

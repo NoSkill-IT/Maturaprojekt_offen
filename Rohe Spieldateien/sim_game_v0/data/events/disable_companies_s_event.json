@@ -1,0 +1,10 @@
+{
+	"type": "func",
+	"event_name": "disable_companies_s_event",
+	"num_id":0,
+	"variable":"",
+	"new_val":[],
+	"function_name":"event_disable_rp_companies",
+	"parameters":[],	
+	"execution_time":"before"
+}

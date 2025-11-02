@@ -1,0 +1,18 @@
+{
+	"event_name":"inflation",
+	"num_id": 3,
+	"affected_variables":["inflation_value"],
+	"delays":[0], 
+	"phase_duration_ranges":[[1,1]],
+	"affected_from_random":[1],
+	"phase_base_values":[[0.005]],
+	"value_random_range":[[-0.005,0.005]],
+	"special_events":[[],[],[],[]],
+	"execution_times":["before"],
+	"volatility":[0],
+	"base_probability":1,
+	"excludes":["high_inflation","deflation"],
+	"requirement":{
+		"type":"none"
+	}
+}

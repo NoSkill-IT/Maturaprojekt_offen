@@ -1,0 +1,780 @@
+[gd_scene load_steps=8 format=3 uid="uid://4elj14wqv6jx"]
+
+[ext_resource type="Script" uid="uid://d2m36bhjri567" path="res://scripts/active_game.gd" id="1_r10ur"]
+[ext_resource type="Theme" uid="uid://vtujw8nrq1fy" path="res://scenes/theme.tres" id="2_xe1va"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xe1va"]
+bg_color = Color(0.005005935, 0.0024124274, 0.012617188, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_muxv7"]
+bg_color = Color(0.09620472, 0.09620475, 0.09620469, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7dnp"]
+bg_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dp38y"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_xe1va"]
+
+[node name="ActiveGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r10ur")
+
+[node name="money_display" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 21.0
+
+[node name="main_tabs" type="TabContainer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme = ExtResource("2_xe1va")
+tab_alignment = 1
+current_tab = 0
+
+[node name="start" type="Control" parent="main_tabs"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="events" type="Control" parent="main_tabs"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="events_container" type="HBoxContainer" parent="main_tabs/events"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1870.0
+offset_bottom = 1000.0
+theme_override_constants/separation = 10
+
+[node name="overview" type="VBoxContainer" parent="main_tabs/events/events_container"]
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+
+[node name="base_event_overview" type="Label" parent="main_tabs/events/events_container/overview"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Event overview"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="base_event_scroll" type="ScrollContainer" parent="main_tabs/events/events_container/overview"]
+custom_minimum_size = Vector2(1200, 600)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="base_event_container" type="GridContainer" parent="main_tabs/events/events_container/overview/base_event_scroll"]
+clip_contents = true
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+columns = 3
+
+[node name="short_event_overview" type="Label" parent="main_tabs/events/events_container/overview"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Event functions"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="short_event_scroll" type="ScrollContainer" parent="main_tabs/events/events_container/overview"]
+custom_minimum_size = Vector2(1200, 200)
+layout_mode = 2
+vertical_scroll_mode = 0
+
+[node name="short_event_container" type="HBoxContainer" parent="main_tabs/events/events_container/overview/short_event_scroll"]
+custom_minimum_size = Vector2(1200, 200)
+layout_mode = 2
+
+[node name="active_events" type="VBoxContainer" parent="main_tabs/events/events_container"]
+custom_minimum_size = Vector2(610, 0)
+layout_mode = 2
+
+[node name="active_events_title" type="Label" parent="main_tabs/events/events_container/active_events"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Active Events"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="active_events_scroll" type="ScrollContainer" parent="main_tabs/events/events_container/active_events"]
+custom_minimum_size = Vector2(0, 879)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="active_events_container" type="VBoxContainer" parent="main_tabs/events/events_container/active_events/active_events_scroll"]
+layout_mode = 2
+
+[node name="event_info_panel" type="Panel" parent="main_tabs/events"]
+visible = false
+layout_mode = 0
+offset_left = 1220.0
+offset_right = 1920.0
+offset_bottom = 1050.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xe1va")
+
+[node name="info_panel_container" type="VBoxContainer" parent="main_tabs/events/event_info_panel"]
+custom_minimum_size = Vector2(680, 0)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 690.0
+offset_bottom = 50.0
+
+[node name="name" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+
+[node name="description" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+
+[node name="affected_variables" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="probability" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
+layout_mode = 2
+
+[node name="active" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="total_duration" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="phases" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="excludes" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="requirements" type="RichTextLabel" parent="main_tabs/events/event_info_panel/info_panel_container"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="close" type="Button" parent="main_tabs/events/event_info_panel"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 0
+offset_left = 675.0
+offset_right = 700.0
+offset_bottom = 36.0
+text = "✗"
+
+[node name="active_event_info" type="Panel" parent="main_tabs/events"]
+visible = false
+layout_mode = 0
+offset_right = 700.0
+offset_bottom = 1050.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xe1va")
+
+[node name="info_panel_container" type="VBoxContainer" parent="main_tabs/events/active_event_info"]
+custom_minimum_size = Vector2(680, 0)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 690.0
+offset_bottom = 50.0
+
+[node name="name" type="Label" parent="main_tabs/events/active_event_info/info_panel_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+
+[node name="active" type="Label" parent="main_tabs/events/active_event_info/info_panel_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="timeline" type="Tree" parent="main_tabs/events/active_event_info/info_panel_container"]
+custom_minimum_size = Vector2(0, 800)
+layout_mode = 2
+columns = 3
+allow_search = false
+scroll_horizontal_enabled = false
+
+[node name="close" type="Button" parent="main_tabs/events/active_event_info"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 0
+offset_left = 675.0
+offset_right = 700.0
+offset_bottom = 36.0
+text = "✗"
+
+[node name="production" type="Control" parent="main_tabs"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="production_methods" type="VBoxContainer" parent="main_tabs/production"]
+custom_minimum_size = Vector2(930, 1000)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 950.0
+offset_bottom = 1020.0
+theme = ExtResource("2_xe1va")
+
+[node name="production_method_title" type="Label" parent="main_tabs/production/production_methods"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+
+[node name="pm_scroll" type="ScrollContainer" parent="main_tabs/production/production_methods"]
+custom_minimum_size = Vector2(0, 900)
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="pm_overview" type="VBoxContainer" parent="main_tabs/production/production_methods/pm_scroll"]
+custom_minimum_size = Vector2(930, 0)
+layout_mode = 2
+
+[node name="employees_preview" type="VBoxContainer" parent="main_tabs/production"]
+custom_minimum_size = Vector2(870, 1000)
+layout_mode = 0
+offset_left = 1036.0
+offset_top = 20.0
+offset_right = 1906.0
+offset_bottom = 1020.0
+
+[node name="employee_group_title" type="Label" parent="main_tabs/production/employees_preview"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+
+[node name="eg_scroll" type="ScrollContainer" parent="main_tabs/production/employees_preview"]
+custom_minimum_size = Vector2(870, 600)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="eg_overview" type="GridContainer" parent="main_tabs/production/employees_preview/eg_scroll"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="production_preview" type="Tree" parent="main_tabs/production/employees_preview"]
+custom_minimum_size = Vector2(870, 300)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/title_button_font_size = 15
+columns = 3
+
+[node name="resources" type="Control" parent="main_tabs"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="resource_overview" type="VBoxContainer" parent="main_tabs/resources"]
+custom_minimum_size = Vector2(930, 0)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 950.0
+offset_bottom = 1021.0
+theme_override_constants/separation = 20
+
+[node name="title" type="Label" parent="main_tabs/resources/resource_overview"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
+[node name="row1" type="HBoxContainer" parent="main_tabs/resources/resource_overview"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="chocolate" type="Button" parent="main_tabs/resources/resource_overview/row1"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="cocoa" type="Button" parent="main_tabs/resources/resource_overview/row1"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="sugar" type="Button" parent="main_tabs/resources/resource_overview/row1"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="row2" type="HBoxContainer" parent="main_tabs/resources/resource_overview"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="milk_powder" type="Button" parent="main_tabs/resources/resource_overview/row2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="nuts" type="Button" parent="main_tabs/resources/resource_overview/row2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="resource_info" type="Panel" parent="main_tabs/resources/resource_overview"]
+custom_minimum_size = Vector2(0, 710)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_muxv7")
+
+[node name="ri_container" type="VBoxContainer" parent="main_tabs/resources/resource_overview/resource_info"]
+custom_minimum_size = Vector2(890, 68)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 920.0
+offset_bottom = 88.0
+
+[node name="name" type="Label" parent="main_tabs/resources/resource_overview/resource_info/ri_container"]
+layout_mode = 2
+
+[node name="usage_sort" type="GridContainer" parent="main_tabs/resources/resource_overview/resource_info/ri_container"]
+layout_mode = 2
+columns = 2
+
+[node name="sort_by" type="Label" parent="main_tabs/resources/resource_overview/resource_info/ri_container/usage_sort"]
+layout_mode = 2
+
+[node name="sort_by_option" type="OptionButton" parent="main_tabs/resources/resource_overview/resource_info/ri_container/usage_sort"]
+layout_mode = 2
+
+[node name="age_sort" type="Label" parent="main_tabs/resources/resource_overview/resource_info/ri_container/usage_sort"]
+layout_mode = 2
+
+[node name="age_sort_option" type="OptionButton" parent="main_tabs/resources/resource_overview/resource_info/ri_container/usage_sort"]
+layout_mode = 2
+
+[node name="quality_sort" type="Label" parent="main_tabs/resources/resource_overview/resource_info/ri_container/usage_sort"]
+layout_mode = 2
+
+[node name="quality_sort_option" type="OptionButton" parent="main_tabs/resources/resource_overview/resource_info/ri_container/usage_sort"]
+layout_mode = 2
+
+[node name="average_total" type="GridContainer" parent="main_tabs/resources/resource_overview/resource_info/ri_container"]
+layout_mode = 2
+columns = 2
+
+[node name="amount" type="Label" parent="main_tabs/resources/resource_overview/resource_info/ri_container/average_total"]
+layout_mode = 2
+
+[node name="amount_val" type="Label" parent="main_tabs/resources/resource_overview/resource_info/ri_container/average_total"]
+layout_mode = 2
+
+[node name="quality" type="Label" parent="main_tabs/resources/resource_overview/resource_info/ri_container/average_total"]
+layout_mode = 2
+
+[node name="quality_val" type="Label" parent="main_tabs/resources/resource_overview/resource_info/ri_container/average_total"]
+layout_mode = 2
+
+[node name="stored_batches" type="Tree" parent="main_tabs/resources/resource_overview/resource_info/ri_container"]
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 2
+columns = 4
+
+[node name="contracts" type="Tree" parent="main_tabs/resources/resource_overview/resource_info/ri_container"]
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 2
+
+[node name="rp_contracts" type="VBoxContainer" parent="main_tabs/resources"]
+custom_minimum_size = Vector2(930, 0)
+layout_mode = 0
+offset_left = 970.0
+offset_top = 20.0
+offset_right = 1900.0
+offset_bottom = 445.0
+
+[node name="resource_companies" type="Label" parent="main_tabs/resources/rp_contracts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="rc_scroll" type="ScrollContainer" parent="main_tabs/resources/rp_contracts"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="rc_grid" type="GridContainer" parent="main_tabs/resources/rp_contracts/rc_scroll"]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 3
+
+[node name="rc_info" type="Panel" parent="main_tabs/resources/rp_contracts"]
+custom_minimum_size = Vector2(0, 562)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s7dnp")
+
+[node name="container" type="VBoxContainer" parent="main_tabs/resources/rp_contracts/rc_info"]
+custom_minimum_size = Vector2(890, 0)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 60.0
+
+[node name="name" type="Label" parent="main_tabs/resources/rp_contracts/rc_info/container"]
+layout_mode = 2
+
+[node name="info" type="GridContainer" parent="main_tabs/resources/rp_contracts/rc_info/container"]
+layout_mode = 2
+columns = 2
+
+[node name="resource" type="Label" parent="main_tabs/resources/rp_contracts/rc_info/container/info"]
+layout_mode = 2
+
+[node name="resource_name" type="Label" parent="main_tabs/resources/rp_contracts/rc_info/container/info"]
+layout_mode = 2
+
+[node name="reliability" type="Label" parent="main_tabs/resources/rp_contracts/rc_info/container/info"]
+layout_mode = 2
+
+[node name="reliability_val" type="Label" parent="main_tabs/resources/rp_contracts/rc_info/container/info"]
+layout_mode = 2
+
+[node name="quality" type="Label" parent="main_tabs/resources/rp_contracts/rc_info/container/info"]
+layout_mode = 2
+
+[node name="quality_val" type="Label" parent="main_tabs/resources/rp_contracts/rc_info/container/info"]
+layout_mode = 2
+
+[node name="price" type="Label" parent="main_tabs/resources/rp_contracts/rc_info/container/info"]
+layout_mode = 2
+
+[node name="price_val" type="Label" parent="main_tabs/resources/rp_contracts/rc_info/container/info"]
+layout_mode = 2
+
+[node name="capacity" type="Label" parent="main_tabs/resources/rp_contracts/rc_info/container/info"]
+layout_mode = 2
+
+[node name="capacity_val" type="Label" parent="main_tabs/resources/rp_contracts/rc_info/container/info"]
+layout_mode = 2
+
+[node name="duration" type="Label" parent="main_tabs/resources/rp_contracts/rc_info/container/info"]
+layout_mode = 2
+
+[node name="duration_val" type="Label" parent="main_tabs/resources/rp_contracts/rc_info/container/info"]
+layout_mode = 2
+
+[node name="cancel_notice" type="Label" parent="main_tabs/resources/rp_contracts/rc_info/container/info"]
+layout_mode = 2
+
+[node name="cancel_notice_val" type="Label" parent="main_tabs/resources/rp_contracts/rc_info/container/info"]
+layout_mode = 2
+
+[node name="sentiment" type="Label" parent="main_tabs/resources/rp_contracts/rc_info/container/info"]
+layout_mode = 2
+
+[node name="sentiment_val" type="Label" parent="main_tabs/resources/rp_contracts/rc_info/container/info"]
+layout_mode = 2
+
+[node name="contracts" type="Tree" parent="main_tabs/resources/rp_contracts/rc_info/container"]
+custom_minimum_size = Vector2(0, 239)
+layout_mode = 2
+columns = 5
+
+[node name="new_contract" type="Button" parent="main_tabs/resources/rp_contracts/rc_info/container"]
+layout_mode = 2
+
+[node name="canceled_contracts" type="Label" parent="main_tabs/resources/rp_contracts/rc_info/container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="extend_contract" type="Panel" parent="main_tabs/resources"]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 0
+offset_left = 710.0
+offset_top = 400.0
+offset_right = 1210.0
+offset_bottom = 550.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dp38y")
+
+[node name="title" type="Label" parent="main_tabs/resources/extend_contract"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 31.0
+theme_override_font_sizes/font_size = 25
+
+[node name="terms" type="GridContainer" parent="main_tabs/resources/extend_contract"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 40.0
+offset_right = 490.0
+offset_bottom = 150.0
+columns = 2
+
+[node name="duration_left" type="Label" parent="main_tabs/resources/extend_contract/terms"]
+layout_mode = 2
+
+[node name="duration_left_val" type="Label" parent="main_tabs/resources/extend_contract/terms"]
+layout_mode = 2
+
+[node name="price" type="Label" parent="main_tabs/resources/extend_contract/terms"]
+layout_mode = 2
+
+[node name="price_val" type="Label" parent="main_tabs/resources/extend_contract/terms"]
+layout_mode = 2
+
+[node name="amount" type="Label" parent="main_tabs/resources/extend_contract/terms"]
+layout_mode = 2
+
+[node name="amount_val" type="Label" parent="main_tabs/resources/extend_contract/terms"]
+layout_mode = 2
+
+[node name="accept" type="Button" parent="main_tabs/resources/extend_contract/terms"]
+custom_minimum_size = Vector2(238, 0)
+layout_mode = 2
+
+[node name="cancel" type="Button" parent="main_tabs/resources/extend_contract/terms"]
+custom_minimum_size = Vector2(238, 0)
+layout_mode = 2
+
+[node name="new_contract" type="Panel" parent="main_tabs/resources"]
+visible = false
+custom_minimum_size = Vector2(300, 180)
+layout_mode = 0
+offset_left = 710.0
+offset_top = 400.0
+offset_right = 1210.0
+offset_bottom = 550.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dp38y")
+
+[node name="title" type="Label" parent="main_tabs/resources/new_contract"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 31.0
+theme_override_font_sizes/font_size = 25
+
+[node name="terms" type="GridContainer" parent="main_tabs/resources/new_contract"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 40.0
+offset_right = 490.0
+offset_bottom = 150.0
+columns = 2
+
+[node name="duration" type="Label" parent="main_tabs/resources/new_contract/terms"]
+layout_mode = 2
+
+[node name="duration_val" type="SpinBox" parent="main_tabs/resources/new_contract/terms"]
+layout_mode = 2
+step = 0.25
+suffix = "y"
+custom_arrow_step = 0.25
+
+[node name="amount" type="Label" parent="main_tabs/resources/new_contract/terms"]
+layout_mode = 2
+
+[node name="amount_val" type="SpinBox" parent="main_tabs/resources/new_contract/terms"]
+layout_mode = 2
+suffix = "kg"
+
+[node name="price" type="Label" parent="main_tabs/resources/new_contract/terms"]
+layout_mode = 2
+
+[node name="price_val" type="Label" parent="main_tabs/resources/new_contract/terms"]
+layout_mode = 2
+
+[node name="accept" type="Button" parent="main_tabs/resources/new_contract/terms"]
+custom_minimum_size = Vector2(238, 0)
+layout_mode = 2
+
+[node name="cancel" type="Button" parent="main_tabs/resources/new_contract/terms"]
+custom_minimum_size = Vector2(238, 0)
+layout_mode = 2
+
+[node name="sales" type="Control" parent="main_tabs"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="contents" type="HBoxContainer" parent="main_tabs/sales"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 1888.0
+offset_bottom = 1000.0
+
+[node name="player_company_info" type="VBoxContainer" parent="main_tabs/sales/contents"]
+custom_minimum_size = Vector2(620, 980)
+layout_mode = 2
+
+[node name="player_company_title" type="Label" parent="main_tabs/sales/contents/player_company_info"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+
+[node name="infos" type="GridContainer" parent="main_tabs/sales/contents/player_company_info"]
+layout_mode = 2
+columns = 3
+
+[node name="stat" type="Label" parent="main_tabs/sales/contents/player_company_info/infos"]
+layout_mode = 2
+
+[node name="current" type="Label" parent="main_tabs/sales/contents/player_company_info/infos"]
+layout_mode = 2
+
+[node name="new" type="Label" parent="main_tabs/sales/contents/player_company_info/infos"]
+layout_mode = 2
+
+[node name="price_title" type="Label" parent="main_tabs/sales/contents/player_company_info/infos"]
+layout_mode = 2
+
+[node name="price_now" type="Label" parent="main_tabs/sales/contents/player_company_info/infos"]
+layout_mode = 2
+
+[node name="price_new" type="SpinBox" parent="main_tabs/sales/contents/player_company_info/infos"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+step = 0.05
+suffix = "CHF/kg"
+
+[node name="sales_title" type="Label" parent="main_tabs/sales/contents/player_company_info/infos"]
+layout_mode = 2
+
+[node name="sales_now" type="Label" parent="main_tabs/sales/contents/player_company_info/infos"]
+layout_mode = 2
+
+[node name="sales_new" type="Label" parent="main_tabs/sales/contents/player_company_info/infos"]
+layout_mode = 2
+
+[node name="revenue_title" type="Label" parent="main_tabs/sales/contents/player_company_info/infos"]
+layout_mode = 2
+
+[node name="revenue_now" type="Label" parent="main_tabs/sales/contents/player_company_info/infos"]
+layout_mode = 2
+
+[node name="revenue_new" type="Label" parent="main_tabs/sales/contents/player_company_info/infos"]
+layout_mode = 2
+
+[node name="infos2" type="GridContainer" parent="main_tabs/sales/contents/player_company_info"]
+layout_mode = 2
+columns = 2
+
+[node name="confirm" type="Button" parent="main_tabs/sales/contents/player_company_info/infos2"]
+layout_mode = 2
+
+[node name="cancel" type="Button" parent="main_tabs/sales/contents/player_company_info/infos2"]
+layout_mode = 2
+
+[node name="quality" type="Label" parent="main_tabs/sales/contents/player_company_info/infos2"]
+layout_mode = 2
+
+[node name="quality_val" type="Label" parent="main_tabs/sales/contents/player_company_info/infos2"]
+layout_mode = 2
+
+[node name="publicity" type="Label" parent="main_tabs/sales/contents/player_company_info/infos2"]
+layout_mode = 2
+
+[node name="publicity_val" type="Label" parent="main_tabs/sales/contents/player_company_info/infos2"]
+layout_mode = 2
+
+[node name="sentiment" type="Label" parent="main_tabs/sales/contents/player_company_info/infos2"]
+layout_mode = 2
+
+[node name="sentiment_val" type="Label" parent="main_tabs/sales/contents/player_company_info/infos2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="main_tabs/sales/contents"]
+custom_minimum_size = Vector2(310, 980)
+layout_mode = 2
+
+[node name="money_trace" type="Tree" parent="main_tabs/sales/contents"]
+custom_minimum_size = Vector2(930, 980)
+layout_mode = 2
+columns = 4
+
+[node name="rnd" type="Control" parent="main_tabs"]
+visible = false
+layout_mode = 2
+theme = SubResource("Theme_xe1va")
+metadata/_tab_index = 5
+
+[node name="rnd_tabs" type="TabContainer" parent="main_tabs/rnd"]
+custom_minimum_size = Vector2(1800, 900)
+layout_mode = 0
+offset_left = 60.0
+offset_top = 50.0
+offset_right = 1860.0
+offset_bottom = 950.0
+
+[node name="rnd_info" type="Panel" parent="main_tabs/rnd"]
+custom_minimum_size = Vector2(600, 1050)
+layout_mode = 0
+offset_left = 1320.0
+offset_right = 1920.0
+offset_bottom = 1050.0
+
+[node name="content" type="VBoxContainer" parent="main_tabs/rnd/rnd_info"]
+custom_minimum_size = Vector2(580, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="name" type="Label" parent="main_tabs/rnd/rnd_info/content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 165
+
+[node name="description" type="Label" parent="main_tabs/rnd/rnd_info/content"]
+layout_mode = 2
+
+[node name="requirements" type="RichTextLabel" parent="main_tabs/rnd/rnd_info/content"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="duration" type="Label" parent="main_tabs/rnd/rnd_info/content"]
+layout_mode = 2
+
+[node name="cost" type="Label" parent="main_tabs/rnd/rnd_info/content"]
+layout_mode = 2
+
+[node name="success_chance" type="Label" parent="main_tabs/rnd/rnd_info/content"]
+layout_mode = 2
+
+[node name="active" type="Button" parent="main_tabs/rnd/rnd_info/content"]
+layout_mode = 2
+toggle_mode = true
+
+[node name="unlock" type="Button" parent="main_tabs/rnd/rnd_info/content"]
+layout_mode = 2
+
+[node name="settings" type="Control" parent="main_tabs"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 6
+
+[connection signal="pressed" from="main_tabs/events/event_info_panel/close" to="." method="_on_close_event_info_pressed"]
+[connection signal="pressed" from="main_tabs/events/active_event_info/close" to="." method="_on_close_active_event_pressed"]
+[connection signal="pressed" from="main_tabs/resources/resource_overview/row1/chocolate" to="." method="load_resource_info" binds= ["chocolate"]]
+[connection signal="pressed" from="main_tabs/resources/resource_overview/row1/cocoa" to="." method="load_resource_info" binds= ["cocoa"]]
+[connection signal="pressed" from="main_tabs/resources/resource_overview/row1/sugar" to="." method="load_resource_info" binds= ["sugar"]]
+[connection signal="pressed" from="main_tabs/resources/resource_overview/row2/milk_powder" to="." method="load_resource_info" binds= ["milk_powder"]]
+[connection signal="pressed" from="main_tabs/resources/resource_overview/row2/nuts" to="." method="load_resource_info" binds= ["nuts"]]
+[connection signal="item_selected" from="main_tabs/resources/resource_overview/resource_info/ri_container/usage_sort/quality_sort_option" to="." method="change_sort"]
+[connection signal="button_clicked" from="main_tabs/resources/resource_overview/resource_info/ri_container/stored_batches" to="." method="discard_batch"]
+[connection signal="button_clicked" from="main_tabs/resources/rp_contracts/rc_info/container/contracts" to="." method="modify_contract"]
+[connection signal="pressed" from="main_tabs/resources/rp_contracts/rc_info/container/new_contract" to="." method="open_new_contract_window"]
+[connection signal="pressed" from="main_tabs/resources/extend_contract/terms/accept" to="." method="accept_extension"]
+[connection signal="pressed" from="main_tabs/resources/extend_contract/terms/cancel" to="." method="cancel_extension"]
+[connection signal="pressed" from="main_tabs/resources/new_contract/terms/accept" to="." method="accept_new_contract"]
+[connection signal="pressed" from="main_tabs/resources/new_contract/terms/cancel" to="." method="cancel_new_contract"]
+[connection signal="pressed" from="main_tabs/sales/contents/player_company_info/infos2/confirm" to="." method="load_new_price"]
+[connection signal="pressed" from="main_tabs/sales/contents/player_company_info/infos2/cancel" to="." method="cancel_new_price"]
+[connection signal="pressed" from="main_tabs/rnd/rnd_info/content/active" to="." method="toggle_rnd_node_effect"]
+[connection signal="pressed" from="main_tabs/rnd/rnd_info/content/unlock" to="." method="unlock_rnd"]

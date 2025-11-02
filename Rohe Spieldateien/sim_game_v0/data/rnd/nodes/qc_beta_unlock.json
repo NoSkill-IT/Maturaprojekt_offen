@@ -1,0 +1,29 @@
+{
+	"base_price": 500000,
+	"parents": ["qc_alpha_unlock"],
+	"parent_requirement_type":["and",0],	
+	"upgrade_time":5000,
+	"base_success_probability":0.98,
+	"name":"qc_beta_unlock",
+	"start_unlocked":false,
+	"auto_activate":true,
+	"employee_type":"rnd",
+	"buy_requirements":
+	{
+		"type":"req",
+		"variable":"production_methods.quantumcreme_alpha.unlocked_machines",
+		"comp": ">",
+		"value":0
+	},
+	"effects":
+	[
+		{
+			"effect_type":"var",
+			"effect_requirements":{"type":"none"},
+			"period":0,
+			"variable":"production_methods.quantumcreme_beta.unlocked",
+			"value":true,
+			"op":"set",
+		}
+	]
+}

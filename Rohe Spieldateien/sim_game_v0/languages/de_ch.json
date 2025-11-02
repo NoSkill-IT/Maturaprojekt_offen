@@ -1,0 +1,960 @@
+{
+	"main_menu":{
+		"main_menu_content":{
+			"main_menu_bar":{
+				"new_game": "NEUES SPIEL",
+				"load_game": "SPIEL LADEN",
+				"settings": "OPTIONEN",
+				"leave_game": "SPIEL VERLASSEN"
+			}
+		},
+		"settings":{
+			"settings_title": "Optionen",
+			"all_settings":{
+				"language_setting":{
+					"language_label": "Sprache"
+				},
+				"resolution_setting":{
+					"resolution_label": "Auflösung"
+				},
+				"window_mode_setting":{
+					"window_mode_label": "Anzeigemodus",
+					"window_mode_option": ["Vollbild","Fenster","Randloser Fenstermodus"]
+				},
+				
+				"settings_management":{
+					"apply":"Einstellungen anwenden",
+					"back_to_main": "Zurück zum Hauptmenü"
+				}	
+			}
+		},
+		"new_game":{
+			"new_game_title":"Spiel Speichern",
+			"slot_selection":{
+				"slot_1":"Spielstand 1\n{0}",
+				"slot_2":"Spielstand 2\n{0}",
+				"slot_3":"Spielstand 3\n{0}",
+				"slot_4":"Spielstand 4\n{0}"
+			},
+			"confirm":{
+				"confirm_text":"{0}Das Spiel speichert automatisch am Ende jeder Runde. Beende das Spiel nur mit der dafür vorgesehenen Schaltfläche.\nVerlassen des Spiels auf andere Weise beschädigt den Speicherstand.\nDu kannst einen eigenen Namen für den Speicherstand hier festlegen.",
+				"seed":{
+					"seed_text": "Seed:"
+				},
+				"buttons":
+					{
+						"confirm": "Bestätigen",
+						"cancel": "Abbrechen"
+					}
+			},
+			"dynamic":{
+				"empty_slot": "Leerer Spielstand",
+				"last_played": "Zuletzt gespielt: {0}",
+				"custom_name": "Name: {0}",
+				"seed": "Seed: {0}",
+				"overwrite": "Diese Aktion wird den Spielstand {0} überschreiben! "
+			}
+		},
+		"load_game":{
+			"load_game_title":"Spiel Laden",
+			"slot_selection":{
+				"slot_1":"Spielstand 1\n{0}",
+				"slot_2":"Spielstand 2\n{0}",
+				"slot_3":"Spielstand 3\n{0}",
+				"slot_4":"Spielstand 4\n{0}"
+			},
+			"confirm":{
+				"confirm_text":"Das Spiel speichert automatisch am Ende jeder Runde. Beende das Spiel nur mit der dafür vorgesehenen Schaltfläche.\nVerlassen des Spiels auf andere Weise beschädigt den Speicherstand.\nDu kannst einen eigenen Namen für den Speicherstand hier neu festlegen.",
+				"buttons":
+					{
+						"confirm": "Bestätigen",
+						"cancel": "Abbrechen"
+					}
+			},
+			"dynamic":{
+				"empty_slot": "Leerer Spielstand",
+				"last_played": "Zuletzt gespielt: {0}",
+				"custom_name": "Name: {0}",
+				"seed": "Seed: {0}"
+			}
+		}
+	},
+	"active_game":{
+		"main_tabs":{
+			"start":{
+				"tab_title": "Übersicht",
+				"tab_tooltip": "Übersicht über die Spielfunktionen",
+				"contents":{
+					"end_turn_continue":"Diese Runde beenden, und zur nächsten Runde fortfahren",
+					"end_turn_quit":"Diese Runde beenden, und das Spiel beenden."
+				}
+			},
+			"resources":{
+				"tab_title": "Ressourcen",
+				"tab_tooltip": "Mache Verträge mit Ressourcenfirmen",
+				"contents":{
+					"resource_overview":{
+						"title":"Ressourcenübersicht",
+						"row1":{
+							"chocolate":"Schokolade",
+							"cocoa":"Kakao",
+							"sugar":"Zucker",
+						},
+						"row2":{
+							"milk_powder":"Milchpulver",
+							"nuts":"Nüsse"
+						},
+						"resource_info":{
+							"ri_container":{
+								"usage_sort":{
+									"sort_by":"Primäres Sortierkriterium",
+									"age_sort":"nach Alter sortieren",
+									"quality_sort":"nach Qualität sortieren",
+								},
+								"average_total":{
+									"amount":"Gesamter gelagerter Bestand",
+									"quality":"Ø Qualität"
+								}
+							}
+						}
+						
+					},
+					"rp_contracts":{
+						"resource_companies":"Ressourcenfirmen",
+						"rc_info":{
+							"container":{
+								"info":{
+									"resource":"Ressource:",
+									"reliability":{"text":"Zuverlässigkeit:","tooltip":"Je zuverlässiger eine Firma ist,\ndesto konstanter sind die Lieferungen."},
+									"quality":"Ressourcenqualität:",
+									"price":{"text":"Ausgangspreis:", "tooltip":"Der tatsächliche Preis eines Vertrags\nhängt von der Haltung der Firma dir gegenüber ab."},
+									"capacity":{"text":"Kapazität","tooltip":"Die maximale Menge, die du pro Quartal von der Firma bestellen kannst"},
+									"duration":{"text":"Vertragsdauer","tooltip":"Ober- und Untergrenze für Verträge"},
+									"cancel_notice":{"text":"Kündigungsfrist","tooltip":"Wenn du einen Vertrag vorzeitig kündigst, wird die Restdauer zu folgendem Wert gesetzt: max(min_dauer-übrige_dauer,kündigungsfrist)."},
+									"sentiment":{"text":"Haltung","tooltip":"Wie sehr diese Firma dich mag"}
+								}
+							}
+						}
+					},
+					"extend_contract":{
+						"title":"Vorschlag Vertragsverlängerung:",
+						"terms":{
+							"duration_left":"Neue Restdauer",
+							"price":"Neuer Preis pro Lieferung",
+							"amount":"Neue Menge",
+							"accept":"Verlängerung akzeptieren",
+							"cancel":"Nicht verlängern",
+						}
+					},
+					"new_contract":{
+						"title":"Neuen Vertrag verhandeln",
+						"terms":{
+							"duration":"Dauer",
+							"price":"Preis pro Lieferung",
+							"amount":"Menge",
+							"accept":"Vertrag bestätigen",
+							"cancel":"Abbrechen"
+						}
+					}
+				}
+			},
+			"sales":{
+				"tab_title": "Verkäufe und Finanzen",
+				"tab_tooltip":"Vergleiche Verkaufszahlen mit anderen Firmen und checke deine Ein- und Ausgaben",
+				"contents":{
+					"contents":{
+						"company_infos":{
+							"player_company_info":{
+								"player_company_title":"Deine Firma",
+								"infos":{
+									"current":"Jetzt:",
+									"new":"Neu:",
+									"price_title":"Verkaufspreis: ",
+									"sales_title":"Erwartetes Verkaufsvolumen:",
+									"revenue_title":"Erwarteter Umsatz:"
+								},
+								"infos2":{
+									"confirm":"Neuen Preis verwenden",
+									"cancel":"Neuen Preis nicht verwenden",
+									"publicity":"Markenreichweite:",
+									"stock":"Vorrat nach Produktion:",
+									"sentiment":"Öffentliche Stimmung",
+									"quality":"Ø Qualität:"
+								}	
+							},
+							"computer_company_info":{
+								"infos":{
+									"price":"Preis: ",
+									"sales":"Erwartetes Verkaufsvolumen:",
+									"revenue":"Erwarteter Umsatz:",
+									"publicity":"Markenreichweite:",
+									"stock":"Vorrat:",
+									"sentiment":"Öffentliche Stimmung:",
+									"quality":"Ø Qualität"
+								}
+							}
+						},
+						"computer_company_list":{
+							"computer_companies":"Andere Firmen"
+						}
+						
+					}
+				}
+			},
+			"rnd":{
+				"tab_title": "F&E",
+				"tab_tooltip": "Schalte Verbesserungen frei, um deine Firma weiter voran zu treiben",
+				"contents":{
+					
+				}
+			},
+			"events":{
+				"tab_title": "Ereignisse",
+				"tab_tooltip": "Alles zu Ereignissen",
+				"contents":{
+					"events_container":{
+						"overview":{
+							"base_event_overview": "Ereignisübersicht",
+							"short_event_overview": "Ereignisfunktionen"
+						},
+						"active_events":{
+							"active_events_title": "Aktive Ereignisse"
+						}
+					}
+				}
+			},
+			"production":{
+				"tab_title": "Produktion und Angestellte",
+				"tab_tooltip": "Was der Name sagt",
+				"contents":{
+					"production_methods":{
+						"production_method_title": "Produktionsmethoden"
+					},
+					"employees_preview":{
+						"employee_group_title": "Angestellte"
+					}
+				}
+			}
+		},
+		"bankruptcy_alert":{
+			"content":{
+				"title":"DU BIST BANKROTT",
+				"text":"Deine Firma hat nicht genügend Geld um weiter laufen zu können, also musst du Bankrott erklären. Momentan hat deine Firma Schulden in Höhe von {0} CHF",
+				"end_game":"Spiel beenden und zum Hauptmenü zurückkehren"
+			}
+		},
+		"dynamic":{
+			"displays":{
+				"money":"Geld: {0} CHF",
+				"round":"Runde {0}, Q{1} {2}"
+			},
+			"requirements":{
+				"and":"Alle von:",
+				"or":"Eins von:",
+				"none": "Keine",
+				"x_of": "{0} von:"	
+			},
+			"variable_names":{
+				"player_money":"Geld",
+				"cheat_mode":"cheat mode",
+				"production_methods.chocoline_basic.unlocked_machines":"Gekaufte ChocoLine Basic Maschinen",
+				"production_methods.chocoline_2000.unlocked_machines":"Gekaufte ChocoLine 2000 Maschinen",
+				"production_methods.chocoline_pro.unlocked_machines":"Gekaufte ChocoLine Pro Maschinen",
+				"production_methods.chocoline_elite.unlocked_machines":"Gekaufte ChocoLine Elite Maschinen",
+				"production_methods.chocoline_ultra.unlocked_machines":"Gekaufte ChocoLine Ultra Maschinen",
+				"rnd_trees.chocoline_production.all_nodes.0.0.unlocked":"Verbesserung: ChocoLine Basic freischalten freigeschaltet",
+				"rnd_trees.chocoline_production.all_nodes.1.0.unlocked":"Verbesserung: Effizienz verbessern (1/2) freigeschaltet",
+				"rnd_trees.chocoline_production.all_nodes.1.1.unlocked":"Verbesserung: Qualität verbessern (1/2) freigeschaltet",
+				"rnd_trees.chocoline_production.all_nodes.2.0.unlocked":"Verbesserung: ChocoLine 2000 freischalten freigeschaltet",
+				"rnd_trees.chocoline_production.all_nodes.3.0.unlocked":"Verbesserung: Kosten reduzieren (1/2) freigeschaltet",
+				"rnd_trees.chocoline_production.all_nodes.3.1.unlocked":"Verbesserung: Benötigte Angestellte reduzieren (1/2) freigeschaltet",
+				"rnd_trees.chocoline_production.all_nodes.4.0.unlocked":"Verbesserung: Unterhaltkosten reduzieren (1/2) freigeschaltet",
+				"rnd_trees.chocoline_production.all_nodes.4.1.unlocked":"Verbesserung: ChocoLine Pro freischalten freigeschaltet",
+				"rnd_trees.chocoline_production.all_nodes.4.2.unlocked":"Verbesserung: Ressourcenverbrauch reduzieren (1/2) freigeschaltet",
+				"rnd_trees.chocoline_production.all_nodes.5.0.unlocked":"Verbesserung: Effizienz verbessern (2/2) freigeschaltet",
+				"rnd_trees.chocoline_production.all_nodes.5.1.unlocked":"Verbesserung: Qualität verbessern (2/2) freigeschaltet",
+				"rnd_trees.chocoline_production.all_nodes.6.0.unlocked":"Verbesserung: ChocoLine Elite freischalten freigeschaltet",
+				"rnd_trees.chocoline_production.all_nodes.7.0.unlocked":"Verbesserung: Kosten reduzieren (2/2) freigeschaltet",
+				"rnd_trees.chocoline_production.all_nodes.7.1.unlocked":"Verbesserung: Benötigte Angestellte reduzieren (2/2) freigeschaltet",
+				"rnd_trees.chocoline_production.all_nodes.8.0.unlocked":"Verbesserung: Unterhaltkosten reduzieren (2/2) freigeschaltet",
+				"rnd_trees.chocoline_production.all_nodes.8.1.unlocked":"Verbesserung: ChocoLine Ultra freischalten freigeschaltet",
+				"rnd_trees.chocoline_production.all_nodes.8.2.unlocked":"Verbesserung: Reduce Resource Consumption (2/2) freigeschaltet",
+				"production_methods.cocoafusion_one.unlocked_machines":"Gekaufte CocoaFusion One Maschinen",
+				"production_methods.cocoafusion_duo.unlocked_machines":"Gekaufte CocoaFusion Duo Maschinen",
+				"production_methods.cocoafusion_pulse.unlocked_machines":"Gekaufte CocoaFusion Pulse Maschinen",
+				"production_methods.cocoafusion_apex.unlocked_machines":"Gekaufte CocoaFusion Apex Maschinen",
+				"production_methods.cocoafusion_zenith.unlocked_machines":"Gekaufte CocoaFusion Zenith Maschinen",
+				"rnd_trees.cocoafusion_production.all_nodes.0.0.unlocked":"Verbesserung: CocoaFusion One freischalten freigeschaltet",
+				"rnd_trees.cocoafusion_production.all_nodes.1.0.unlocked":"Verbesserung: Effizienz verbessern (1/2) freigeschaltet",
+				"rnd_trees.cocoafusion_production.all_nodes.1.1.unlocked":"Verbesserung: Qualität verbessern (1/2) freigeschaltet",
+				"rnd_trees.cocoafusion_production.all_nodes.2.0.unlocked":"Verbesserung: CocoaFusion Duo freischalten freigeschaltet",
+				"rnd_trees.cocoafusion_production.all_nodes.3.0.unlocked":"Verbesserung: Kosten reduzieren (1/2) freigeschaltet",
+				"rnd_trees.cocoafusion_production.all_nodes.3.1.unlocked":"Verbesserung: Benötigte Angestellte reduzieren (1/2) freigeschaltet",
+				"rnd_trees.cocoafusion_production.all_nodes.4.0.unlocked":"Verbesserung: Unterhaltkosten reduzieren (1/2) freigeschaltet",
+				"rnd_trees.cocoafusion_production.all_nodes.4.1.unlocked":"Verbesserung: CocoaFusion Pulse freischalten freigeschaltet",
+				"rnd_trees.cocoafusion_production.all_nodes.4.2.unlocked":"Verbesserung: Ressourcenverbrauch reduzieren (1/2) freigeschaltet",
+				"rnd_trees.cocoafusion_production.all_nodes.5.0.unlocked":"Verbesserung: Effizienz verbessern (2/2) freigeschaltet",
+				"rnd_trees.cocoafusion_production.all_nodes.5.1.unlocked":"Verbesserung: Qualität verbessern (2/2) freigeschaltet",
+				"rnd_trees.cocoafusion_production.all_nodes.6.0.unlocked":"Verbesserung: CocoaFusion Apex freischalten freigeschaltet",
+				"rnd_trees.cocoafusion_production.all_nodes.7.0.unlocked":"Verbesserung: Kosten reduzieren (2/2) freigeschaltet",
+				"rnd_trees.cocoafusion_production.all_nodes.7.1.unlocked":"Verbesserung: Benötigte Angestellte reduzieren (2/2) freigeschaltet",
+				"rnd_trees.cocoafusion_production.all_nodes.8.0.unlocked":"Verbesserung: Unterhaltkosten reduzieren (2/2) freigeschaltet",
+				"rnd_trees.cocoafusion_production.all_nodes.8.1.unlocked":"Verbesserung: CocoaFusion Zenith freischalten freigeschaltet",
+				"rnd_trees.cocoafusion_production.all_nodes.8.2.unlocked":"Verbesserung: Reduce Resource Consumption (2/2) freigeschaltet",
+				"production_methods.quantumcreme_alpha.unlocked_machines":"Gekaufte QuantumCrème Α Maschinen",
+				"production_methods.quantumcreme_beta.unlocked_machines":"Gekaufte QuantumCrème Β Maschinen",
+				"production_methods.quantumcreme_gamma.unlocked_machines":"Gekaufte QuantumCrème Γ Maschinen",
+				"production_methods.quantumcreme_delta.unlocked_machines":"Gekaufte QuantumCrème Δ Maschinen",
+				"production_methods.quantumcreme_omega.unlocked_machines":"Gekaufte QuantumCrème Ω Maschinen",
+				"rnd_trees.quantumcreme_production.all_nodes.0.0.unlocked":"Verbesserung: QuantumCrème Α freischalten freigeschaltet",
+				"rnd_trees.quantumcreme_production.all_nodes.1.0.unlocked":"Verbesserung: Effizienz verbessern (1/2) freigeschaltet",
+				"rnd_trees.quantumcreme_production.all_nodes.1.1.unlocked":"Verbesserung: Qualität verbessern (1/2) freigeschaltet",
+				"rnd_trees.quantumcreme_production.all_nodes.2.0.unlocked":"Verbesserung: QuantumCrème Β freischalten freigeschaltet",
+				"rnd_trees.quantumcreme_production.all_nodes.3.0.unlocked":"Verbesserung: Kosten reduzieren (1/2) freigeschaltet",
+				"rnd_trees.quantumcreme_production.all_nodes.3.1.unlocked":"Verbesserung: Benötigte Angestellte reduzieren (1/2) freigeschaltet",
+				"rnd_trees.quantumcreme_production.all_nodes.4.0.unlocked":"Verbesserung: Unterhaltkosten reduzieren (1/2) freigeschaltet",
+				"rnd_trees.quantumcreme_production.all_nodes.4.1.unlocked":"Verbesserung: QuantumCrème Γ freischalten freigeschaltet",
+				"rnd_trees.quantumcreme_production.all_nodes.4.2.unlocked":"Verbesserung: Ressourcenverbrauch reduzieren (1/2) freigeschaltet",
+				"rnd_trees.quantumcreme_production.all_nodes.5.0.unlocked":"Verbesserung: Effizienz verbessern (2/2) freigeschaltet",
+				"rnd_trees.quantumcreme_production.all_nodes.5.1.unlocked":"Verbesserung: Qualität verbessern (2/2) freigeschaltet",
+				"rnd_trees.quantumcreme_production.all_nodes.6.0.unlocked":"Verbesserung: QuantumCrème Δ freischalten freigeschaltet",
+				"rnd_trees.quantumcreme_production.all_nodes.7.0.unlocked":"Verbesserung: Kosten reduzieren (2/2) freigeschaltet",
+				"rnd_trees.quantumcreme_production.all_nodes.7.1.unlocked":"Verbesserung: Benötigte Angestellte reduzieren (2/2) freigeschaltet",
+				"rnd_trees.quantumcreme_production.all_nodes.8.0.unlocked":"Verbesserung: Unterhaltkosten reduzieren (2/2) freigeschaltet",
+				"rnd_trees.quantumcreme_production.all_nodes.8.1.unlocked":"Verbesserung: QuantumCrème Ω freischalten freigeschaltet",
+				"rnd_trees.quantumcreme_production.all_nodes.8.2.unlocked":"Verbesserung: Ressourcenverbrauch reduzieren (2/2) freigeschaltet",
+				"rnd_trees.workplace.all_nodes.0.0.unlocked":"Verbesserung: Arbeitsplatz Basis freigeschaltet",
+				"rnd_trees.workplace.all_nodes.1.0.unlocked":"Verbesserung: Pausenraum freigeschaltet",
+				"rnd_trees.workplace.all_nodes.1.1.unlocked":"Verbesserung: Trainingsprogramm (1/2) freigeschaltet",
+				"rnd_trees.workplace.all_nodes.2.0.unlocked":"Verbesserung: Leistungsboni freigeschaltet",
+				"rnd_trees.workplace.all_nodes.2.1.unlocked":"Verbesserung: Trainingsprogramm (2/2) freigeschaltet",
+				"rnd_trees.marketing.all_nodes.0.0.unlocked":"Verbesserung: Marketing Basis freigeschaltet",
+				"rnd_trees.marketing.all_nodes.1.1.unlocked":"Kampagne: Plakatwerbung (1/2) durchgeführt",
+				"rnd_trees.marketing.all_nodes.2.2.unlocked":"Kampagne: Plakatwerbung (2/2) durchgeführt",
+				"rnd_trees.marketing.all_nodes.1.0.unlocked":"Kampagne: Social Media Werbung (1/2) durchgeführt",
+				"rnd_trees.marketing.all_nodes.2.0.unlocked":"Kampagne: Social Media Werbung (2/2) durchgeführt",
+				"rnd_trees.marketing.all_nodes.2.1.unlocked":"Kampagne: TV-Werbung (1/2) durchgeführt",
+				"rnd_trees.marketing.all_nodes.3.1.unlocked":"Kampagne: TV-Werbung (2/2) durchgeführt",
+				"rnd_trees.marketing.all_nodes.3.0.unlocked":"Kampagne: Promi-Werbung (1/2) durchgeführt",
+				"rnd_trees.marketing.all_nodes.4.0.unlocked":"Kampagne: Promi-Werbung (2/2) durchgeführt",
+				"rnd_trees.marketing.all_nodes.3.2.unlocked":"Kampagne: Sponsoring (1/2) durchgeführt",
+				"rnd_trees.marketing.all_nodes.4.2.unlocked":"Kampagne: Sponsoring (2/2) durchgeführt",
+				"rnd_trees.marketing.all_nodes.4.1.unlocked":"Kampagne: Feiertagskampagne (2/2) durchgeführt",
+				"inflation_value":"Inflation",
+				"demand":"Gesamte Nachfrage (Schokolade)",
+				"resources.chocolate.base_value": "Verkaufsberechnung: Referenzwert Schokolade",
+				"resources.chocolate.quality_coefficient": "Verkaufsberechnung: Qualitätskoeffizient Schokolade",
+				"price_modifier":"Schokoladenpreis-Multiplikator",
+				"resource_price_modifier":"Ressourcenpreis-Multiplikator",
+				"salary_multiplier":"Lohnmultiplikator",
+				"events_dict.cancel_contracts.probability_modifier":"Vertragskündigungen Ereigniswahrscheinlichkeit",
+				"events_dict.disable_companies.probability_modifier":"Ressourcenfirmabankrott Ereigniswahrscheinlichkeit",
+				"events_dict.reduce_capacity.probability_modifier":"Ressourcenfirma-Kapazitätverringerung Ereigniswahrscheinlichkeit",
+				"events_dict.high_inflation.probability_modifier":"Starke Inflation Ereigniswahrscheinlichkeit",
+				"events_dict.deflation.probability_modifier":"Deflation Ereigniswahrscheinlichkeit",
+				"production_multiplier":"Produktionsmultiplikator Schokoladenfirmen"				
+			},
+			"function_names":{
+				"event_cancel_contracts":"Verträge kündigen",
+				"event_disable_rp_companies":"Ressourcenfirmen Bankrott",
+				"event_reduce_capacity":"Ressourcenfirma-Kapazität verringern"
+			}, 
+			"event_infos":{
+				"short_event_description":"Name: {0}\nAktiv: {1}\nBeeinflusste Werte: {2}",
+				"short_special_event_description_var":"Name: {0}\nBeeinflusste Werte: {1}",
+				"short_special_event_description_func":"Name: {0}\nAusgeführte Funktion: {1}",
+				"full_event_description":{
+					"phases_amount": "Anzahl Phasen: {0}",
+					"total_duration": "Gesamtdauer: {0}-{1} years",
+					"requirements": "Anforderungen:",
+					"active": "Aktiv: {0}",
+					"probability": "Gesamtwahrscheinlichkeit = Ausgangswahrscheinlichkeit {0}% + Wahrscheinlichkeitsmodifikatior {1}% = {2}%",
+					"affected_variables": "Beeinflusste Variablen: {0}",
+					"excludes": "Schliesst sich gegenseitig aus mit: {0}",
+					"excludes_none": ""
+				},
+				"active_event_short":"Name: {0}\nAngefangen in {1}\nEffekte diese Runde:\n{2}",
+				"active_event_func_call":"Aufruf Funktion {0}",
+				"full_active_description":{
+					"active":"Angefangen in {0}",
+					"timeline_title":"Ereignisauswirkungen",
+					"timeline_function": "Funktion"
+				}
+			},
+			"events":{
+				"inflation": {"name":"Leichte Inflation","description": "Alles wird langsam teurer."},
+				"high_inflation": {"name":"Starke Inflation","description": "Aussergewöhnlich hohe Inflation, Tritt häufiger in der Hochkonjunktur auf."},
+				"deflation": {"name":"Deflation","description": "Preise sinken, häufiger in der Depression"},
+				"cancel_contracts":{"name":"Ressourcenvertragskündigungen","description":"Ressourcenfirmen kündigen ihre Verträge. Schau nach, ob du betroffen bist."},
+				"cancel_contracts_s_event":{"name":"Ressourcenvertragskündigungen","description":"Die Funktion, durch die das Event funktioniert"},
+				"disable_companies":{"name":"Ressourcenfirmabankrott","description":"Eine Ressourcenfirma oder mehrere gehen Bankrott"},
+				"disable_companies_s_event":{"name":"Ressourcenfirmabankrott","description":"Die Funktion, durch die das Event funktioniert"},
+				"reduce_capacity":{"name":"Ressourcenfirma-Kapazitätverringenrung","description":"Ressourcenfirmen können weniger an dich verkaufen"},
+				"reduce_capacity_s_event":{"name":"Ressourcenfirma-Kapazitätverringenrung","description":"Die Funktion, durch die das Event funktioniert"},
+				"economic_cycle":{"name":"Konjunkturzyklus","description":"Dieses Event repräsentiert die Auswirkungen des Konjunkturzyklus auf die Schokoladenindustrie. Beginnt in der mitte des Wirtschaftswachstums, darauf folgt Boom, Rezession und Depression"}
+			},
+			"production_method_info":{
+				"required_workers": "Benötigte Arbeiter pr Machine: {0}\nProduziert {1} kg pro Stunde bei Standardeffizienz",
+				"price_info": "Preis pro Maschine: {0} CHF\nUnterhalt pro aktive Maschine: {1} CHF",
+				"recipe": "Benötigt {0} kg Zucker,\n {1} kg Milchpulver\n{2} kg Nüsse\n {3} kg Kakao\n pro kg Schokolade",
+				"priority_max": "Auf maximale Priorität setzen",
+				"priority_up": "Priorität um 1 erhöhen",
+				"priority_down": "Priorität um 1 verringern",
+				"disable": "Alle Produktion mit dieser Maschine deaktivieren",
+				"cancel": "Kauf, Aktivierung oder Deaktivierung abbrechen",
+				"confirm_purchase": "Kauf von {0} neuen Maschinen bestätigen",
+				"confirm_active": " {0}aktivierung von {1} Maschinen bestätigen",
+				"quality_modifier": "Qualitätsmodifikator: {0}",
+				"active_machines_name": "(de)Aktiviere Maschinen",
+				"active_machines_num": "Aktive Maschinen: {0}",
+				"buy_machines": "Kaufe neue Maschinen",
+				"machines_bought": "Gekaufte Maschinen: {0}",
+				"max_production": "Kann momentan bis zu {0} kg Schokolade pro Quartal und Maschine herstellen"
+			},
+			"production_methods":{
+				"chocoline_basic":"ChocoLine Basic",
+				"chocoline_2000":"ChocoLine 2000",
+				"chocoline_pro":"ChocoLine Pro",
+				"chocoline_elite":"ChocoLine Elite",
+				"chocoline_ultra":"ChocoLine Ultra",
+				"cocoafusion_one":"CocoaFusion One",
+				"cocoafusion_duo":"CocoaFusion Duo",
+				"cocoafusion_pulse":"CocoaFusion Pulse",
+				"cocoafusion_apex":"CocoaFusion Apex",
+				"cocoafusion_zenith":"CocoaFusion Zenith",
+				"quantumcreme_alpha":"QuantumCrème Α (Alpha)",
+				"quantumcreme_beta":"QuantumCrème Β (Beta)",
+				"quantumcreme_gamma":"QuantumCrème Γ (Gamma)",
+				"quantumcreme_delta":"QuantumCrème Δ (Delta)",
+				"quantumcreme_omega":"QuantumCrème Ω (Omega)",
+
+			},
+			"employee_group_info":{
+				"active_employees":"Aktive Angestellte dieser Gruppe: {0}\nDeine Angestellten haben eine Bewertung von {1}",
+				"active_employees_tt":"Wird angestrebte Zielanzahl von {0} Angestellten in {1} erreichen",
+				"job_supply": "{0} Menschen in der Schweiz sind an Jobs von diesem Typ interessiert",
+				"job_supply_tt": "Ignoriere diese Nummer,\n Es gilt einfach, je höher diese Nummer, desto schneller findest du neue Angestellte",
+				"value_title":"Eigenschaft",
+				"now_title":"Aktueller Wert",
+				"new_title":"Neuer Wert",
+				"target":"Zielanzahl Angestellte:",
+				"salary":"Monatslohn:",
+				"hours":"Arbeitsstunden pro Tag:",
+				"happiness":"Erwartete Zufriedenheit:",
+				"effectivity": "Erwartete Produktivität pro Tag:",
+				"sph":"Stundenlohn:",
+				"cancel":"Änderungen bestätigen",
+				"confirm":"Änderungen zurücksetzen"
+			},
+			"employee_groups":{
+				"rnd":{"name":"Forscher und Ingenieure","description":"Entwickeln Verbesserungen"},
+				"marketing":{"name":"Marketing","description":"Verbessern die Markenreichweite"},
+				"hr":{"name":"Human Resources","description":"Kümmern sich um alle Personalangelegenheiten"},
+				"workers":{"name":"Fabrikarbeiter","description":"Die Arbeiter in der Fabrik die Schokolade herstellen"}
+			},
+			"production_preview":{
+				"preview_title":"Erwartete Produktion in diesem Quartal",
+				"resource":"Ressourcenverbrauch",
+				"stored":"Gelagerte Menge in kg",
+				"used":"Erwartete benutzte Menge in kg",
+				"method":"Nutzung Produktionsmethoden",
+				"workers":"Zugewiesene Arbeiter",
+				"produced":"Erwartete Produzierte Schokolade",
+				"result":"Erwarete Gesamte Produktion",
+				"result_quality":"Erwartete Quality: {0}",
+				"result_produced":"Erwartete Menge: {0} kg",
+				"total_workers":"Erwartete Arbeiternutzung",
+				"total":"Gesamte Arbeiter: {0}",
+				"workers_used":"Gesamte zugewiesene Arbeiter: {0}",
+			},
+			"resources":{
+				"sort_options":{
+					"age":"Alter",
+					"quality":"Qualität",
+					"young":"jung->alt",
+					"old":"alt->jung",
+					"best":"gut->schlecht",
+					"worst":"schlecht->gut"
+				},
+				"stored_batches":"Gelagerte Chargen",
+				"amount":"Menge",
+				"quality":"Qualität",
+				"expiration":"x Quartale haltbar",
+				"discard":"Entsorgen",
+				"chocolate": "Schokolade",
+				"sugar": "Zucker",
+				"cocoa": "Kakao",
+				"nuts": "Nüsse",
+				"milk_powder" : "Milchpulver"
+			},
+			"resource_companies":{
+				"names":{
+					"BeanDelight_GmbH": "CocoaDelight AG",
+					"BeanNova_Corp": "TropiNova Ltd.",
+					"BeanPlus_Corp": "ChocoEdge BV",
+					"BrownPlus_GmbH": "BrownPeak SA",
+					"BrownWorks_Ltd": "CacaoWorks AG",
+					"CacaoLine_GmbH": "CacaoTrail GmbH",
+					"CacaoSource_GmbH": "CocoaOrigin Ltd.",
+					"ChocoDelight_SA": "ChocoLuxe AG",
+					"ChocoPlus_GmbH": "ChocoPrime GmbH",
+					"ChocoPlus_SA": "CocoaPrime SA",
+					"ChocoWorks_SA": "CocoaForge SA",
+					"CocoaFoods_GmbH": "TropiFoods AG",
+					"CocoaMix_Corp": "CocoaBlend BV",
+					"CocoaNova_Ltd": "CocoaNext Ltd.",
+					"CocoaSource_Ltd": "CocoaRoots BV",
+					"SourceMix_AG": "OriginMix AG",
+					"SourceMix_GmbH": "OriginTrade GmbH",
+					"SourcePlus_AG": "OriginPlus BV",
+					"SourceWorks_AG": "OriginWorks SA",
+					"TropiMix_Ltd": "TropiHarvest Ltd.",
+					"AlpPlus_Ltd": "AlpLacto Ltd.",
+					"DairyChem_Ltd": "LactoChem GmbH",
+					"DairyLine_SA": "MilcoLine AG",
+					"DairyLine_BV": "MilcoRoute BV",
+					"DairyMix_SA": "DairyBlend SA",
+					"DairyNova_SA": "LactoNova SA",
+					"DairyPlus_SA": "MilkyPlus AG",
+					"DairyWorks_Ltd": "DairyCraft Ltd.",
+					"DryDelight_SA": "PowderDelight AG",
+					"EuroMix_AG": "EuroBlend AG",
+					"EuroMix_SA": "EuroDairy SA",
+					"EuroChem_BV": "EuroLacto BV",
+					"EuroChem_Ltd": "AlpenChem Ltd.",
+					"LactoMix_SA": "LactoBlend SA",
+					"LactoPlus_BV": "LactoPrime BV",
+					"MilcoDelight_AG": "MilcoDream AG",
+					"MilcoPlus_BV": "MilcoEdge BV",
+					"SwissDelight_GmbH": "SwissMilk GmbH",
+					"SwissMix_SA": "SwissBlend SA",
+					"SwissWorks_SA": "SwissCraft AG",
+					"AlpiSource_BV": "AlpiHarvest BV",
+					"BergDelight_Corp": "MountainNut Corp.",
+					"BergWorks_BV": "NutPeak BV",
+					"BergWorks_SA": "NutRange AG",
+					"CrunchDelight_BV": "CrunchJoy BV",
+					"CrunchNova_GmbH": "NutriNova GmbH",
+					"CrunchTrade_BV": "CrunchCom BV",
+					"CrunchTrade_AG": "NutTrade AG",
+					"GlobalChem_Ltd": "GlobalNut Ltd.",
+					"GlobalLine_Ltd": "NutraLine Ltd.",
+					"GlobalWorks_AG": "NutraWorks AG",
+					"GlobalWorks_GmbH": "NutraCraft GmbH",
+					"NutraDelight_GmbH": "NutraJoy GmbH",
+					"NutraPlus_SA": "NutraPrime SA",
+					"NutriFoods_Ltd": "NutriFarm Ltd.",
+					"NutriNova_GmbH": "NutriEdge GmbH",
+					"NuttiNova_BV": "NuttiNext BV",
+					"CrystalFoods_Ltd": "CrystalHarvest Ltd.",
+					"CrystalMix_BV": "CrystalBlend BV",
+					"CrystalMix_Corp": "CrystalWorks Corp.",
+					"CrystalNova_AG": "CrystalEdge AG",
+					"EuroMix_GmbH": "EuroSweet GmbH",
+					"EuroPlus_BV": "EuroSugar BV",
+					"EuroTrade_BV": "SugarTrade BV",
+					"PureDelight_Corp": "PureJoy Corp.",
+					"PureFoods_Ltd": "PureHarvest Ltd.",
+					"PureMix_SA": "PureBlend SA",
+					"PureSource_Corp": "PureOrigin Corp.",
+					"SucrePlus_Ltd": "SucrePrime Ltd.",
+					"SucreWorks_GmbH": "SucreCraft GmbH",
+					"SugaChem_GmbH": "SugarChem AG",
+					"SugaPlus_Ltd": "SugaPrime Ltd.",
+					"SugaTrade_BV": "SugarLine BV",
+					"SweetDelight_Corp": "SweetDream Corp.",
+					"SweetLine_Ltd": "SweetRoute Ltd.",
+					"SweetPlus_Ltd": "SweetPrime Ltd.",
+					"ZucraTrade_GmbH": "ZucraLine GmbH"
+				},
+				"button":"Name: {0}\nResource: {1}\nLaufende Verträge: {2}",
+				"years":"Jahre",
+				"amount":"Menge",
+				"price":"Preis pro Lieferung",
+				"duration_left":"Restzeit",
+				"cancel_contract":"Vertrag kündigen",
+				"renew":"Vertrag verlängern",
+				"renew_tooltip":"Erhalte einen Vorschlag für Vertragsverlängerung (Selbe Menge, Restzeit wird zur ursprünglichen Vertraglaufzeit gesetzt)",
+				"cant_cancel":"Kündigungsfrist übersteigt Restzeit",
+				"cant_extend":"Verlängerung nicht verfügbar",
+				"contracts":"Verträge",
+				"new_contract":"Neuen Vertrag hinzufügen",
+				"no_new_contract_sentiment":"Diese Firma ist nicht für Verhandlungen bereit.",
+				"no_new_contract_capacity":"Die Kapazität der Firma ist komplett ausgelastet.",
+				"canceled_contracts":"Da die Kapatität der Firma abnahm, mussten Verträge gekündigt werden."
+			},
+			"finances":{
+				"player_company_title":"Deine Firma",
+				"current":"Aktueller Wert",
+				"new":"Neuer Wert",
+				"price_title":"Aktueller Verkaufspreis: ",
+				"sales_title":"Erwartetes Verkaufsvolumen:",
+				"revenue_title":"Erwarteter Umsatz:",
+				"confirm":"Neuen Preis bestätigen",
+				"cancel":"Preisänderung abbrechen",
+				"publicity":"Markenreichweite:",
+				"sentiment":"Öffentliche Stimmung:",
+				"quality":"Ø Qualität:"
+			},
+			"rnd_node_info":
+			{
+				"requirements":"Freischaltebedingungen:",
+				"cost":"Preis: {0} CHF",
+				"success_chance":"Erfolgswahrscheinlichkeit: {0}",
+				"instantly":"Sofort Freigeschaltet",
+				"total_time":"Benötigt {0} effektive Arbeitsstunden des {2}-Teams.\nBraucht {1} Jahre zur Freischaltung",
+				"remaining_time": "{0} von {1} Arbeitsstunden des {3}-Teams abgeschlossen.\nErwartete Zeit zur Freischaltung: {2} Jahre",
+				"toggle_effect": "Effekt an- und ausschalten",
+				"already_unlocked": "Schon freigeschaltet",
+				"unlock":"Verbesserung beginnen",
+				"locked":"Du kannst diese Verbesserung nicht freischalten.",
+				"in_progress":"Freischaltung in Arbeit",
+				"active_not_unlocked":"noch nicht"
+			},
+			"rnd_trees":{
+				"chocoline_production":{
+					"tab_title":"ChocoLine",
+					"tab_tooltip":"Robuste Industrielinie für günstige Massenproduktion. Hoher Durchsatz, geringe Kosten.",
+					"cl_basic_unlock":{
+						"name":"Unlock ChocoLine Basic",
+						"description":"Einstiegssystem für kosteneffiziente Produktion einfacher Tafeln. Ideal für Eigenmarken und Grossabnehmer."
+					},
+					"cl_2000_unlock":{
+						"name":"Unlock ChocoLine 2000",
+						"description":"Verbesserte Heiz- und Rührtechnik für gleichmässigere Konsistenz bei hoher Geschwindigkeit."
+					},
+					"cl_pro_unlock":{
+						"name":"Unlock ChocoLine Pro",
+						"description":"Standardisierte Massenfertigung mit automatischer Temperatursteuerungntrol."
+					},
+					"cl_elite_unlock":{
+						"name":"Unlock ChocoLine Elite",
+						"description":"Optimierte Energieeffizienz und Prozessstabilität für kostensparende Dauerproduktion."
+					},
+					"cl_ultra_unlock":{
+						"name":"Unlock ChocoLine Ultra",
+						"description":"Maximale Produktionsrate bei minimalem Wartungsaufwand."
+					},
+					"cl_improve_efficiency1":{
+						"name":"Effizienz verbessern (1/2)",
+						"description":"Erhöhe die Produktionsrate um 5% für ChocoLine Basic und ChocoLine 2000.\nInkompatibel mit\"Qualität verbessern\"."
+					},
+					"cl_improve_efficiency2":{
+						"name":"Effizienz verbessern (2/2)",
+						"description":"Erhöhe die Produktionsrate um 10% für alle ChocoLine Produktionsmaschinen. (Inkl. Boost von Effizienz verbessern (1/2))\nInkompatibel mit \"Qualität verbessern\"."
+					},
+					"cl_improve_quality1":{
+						"name":"Qualität verbessern (1/2)",
+						"description":"Erhöhe die Qualität der von ChocoLine Basic and ChocoLine 2000 Produzierten Schokolade um 0.05.\nInkompatibel mit \"Effizienz verbessern\"."
+					},
+					"cl_improve_quality2":{
+						"name":"Qualität verbessern (2/2)",
+						"description":"Erhöhe die Qualität der von allen ChocoLine Produktionsmaschinen produzierten Schokolade um 0.1. (Inkl. Boost von Qualität verbessern (1/2))\nInkompatibel mit \"Effizienz verbessern\"."
+					},
+					"cl_reduce_cost1":{
+						"name":"Kosten reduzieren (1/2)",
+						"description":"Reduziere die Anschaffungskosten einer Maschine um 10% für ChocoLine Basic, ChocoLine 2000 und Chocoline Pro."
+					},
+					"cl_reduce_cost2":{
+						"name":"Kosten reduzieren (2/2)",
+						"description":"Reduziere die Anschaffungskosten einer Maschine um 20% (Inkl. Rabatt von Kosten reduzieren (1/2)) für alle ChocoLine Produktionsmaschinen."
+					},
+					"cl_reduce_maintenance1":{
+						"name":"Unterhalt reduzieren (1/2)",
+						"description":"Reduziere die Unterhaltskosten einer Maschine um 10% für ChocoLine Basic, ChocoLine 2000 und Chocoline Pro."
+					},
+					"cl_reduce_maintenance2":{
+						"name":"Unterhalt reduzieren (2/2)",
+						"description":"Reduziere die Unterhaltskosten einer Maschine um 20% (Inkl. Rabatt von Unterhalt reduzieren (1/2)) für alle ChocoLine Produktionsmaschinen."
+					},
+					"cl_reduce_employee_requirement1":{
+						"name":"Benötigte Angestellte reduzieren (1/2)",
+						"description":"Reduziere die Benötigte Anzahl Arbeiter pro Maschine um 1 für ChocoLine 2000 und 2 für ChocoLine Pro.\nInkompatibel mit \"Ressourcenverbrauch reduzieren\"."
+					},
+					"cl_reduce_employee_requirement2":{
+						"name":"Benötigte Angestellte reduzieren (2/2)",
+						"description":"Reduziere die Benötigte Anzahl Arbeiter pro Maschine um 1 für ChocoLine Basic, 2 für ChocoLine 2000, 3 für ChocoLine Pro, 4 für ChocoLine Elite und 5 für ChocoLine Ultra. (Inkl. Reduktion von Benötigte Angestellte reduzieren (1/2))\nInkompatibel mit \"Ressourcenverbrauch reduzieren\"."
+					},
+					"cl_reduce_resource_consumption1":{
+						"name":"Ressourcenverbrauch reduzieren (1/2)",
+						"description":"ChocoLine 2000 und Chocoline Pro benutzen Ressourcen etwas effizienter.\nInkompatibel mit \"Benötigte Angestellte reduzieren\"."
+					},
+					"cl_reduce_resource_consumption2":{
+						"name":"Ressourcenverbrauch reduzieren (2/2)",
+						"description":"ChocoLine Elite und Chocoline Ultra benutzen Ressourcen etwas effizienter.\nInkompatibel mit \"Benötigte Angestellte reduzieren\"."
+					},
+					
+				},
+				"cocoafusion_production":{
+					"tab_title":"CocoaFusion",
+					"tab_tooltip":"Ausbalancierte Anlage für Produzenten, die Qualität und Effizienz kombinieren wollen.",
+					"cf_one_unlock":{
+						"name":"Unlock CocoaFusion One",
+						"description":"Kompakte Anlage mit präziser Mischsteuerung."
+					},
+					"cf_duo_unlock":{
+						"name":"Unlock CocoaFusion Duo",
+						"description":"Zwei-Kammer-System für kontrollierte Schmelzprozesse und gleichmässige Kakaobutterverteilung."
+					},
+					"cf_pulse_unlock":{
+						"name":"Unlock CocoaFusion Pulse",
+						"description":"Vibrations- und Magnetrührtechnik für seidigere Texturen und harmonischeren Schmelz."
+					},
+					"cf_apex_unlock":{
+						"name":"Unlock CocoaFusion Apex",
+						"description":"KI-gestützte Prozessregelung – verbessert Geschmack, Stabilität und Produktionsausbeute."
+					},
+					"cf_zenith_unlock":{
+						"name":"Unlock CocoaFusion Zenith",
+						"description":"Vollintegrierte Steuerung von Aroma, Glanz und Textur."
+					},
+					"cf_improve_efficiency1":{
+						"name":"Effizienz verbessern (1/2)",
+						"description":"Erhöhe die Produktionsrate um 5% für CocoaFusion One und CocoaFusion Duo.\nInkompatibel mit\"Qualität verbessern\"."
+					},
+					"cf_improve_efficiency2":{
+						"name":"Effizienz verbessern (2/2)",
+						"description":"Erhöhe die Produktionsrate um 10% für alle CocoaFusion Produktionsmaschinen. (Inkl. Boost von Effizienz verbessern (1/2))\nInkompatibel mit \"Qualität verbessern\"."
+					},
+					"cf_improve_quality1":{
+						"name":"Qualität verbessern (1/2)",
+						"description":"Erhöhe die Qualität der von CocoaFusion One and CocoaFusion Duo Produzierten Schokolade um 0.05.\nInkompatibel mit \"Effizienz verbessern\"."
+					},
+					"cf_improve_quality2":{
+						"name":"Qualität verbessern (2/2)",
+						"description":"Erhöhe die Qualität der von allen CocoaFusion Produktionsmaschinen produzierten Schokolade um 0.1. (Inkl. Boost von Qualität verbessern (1/2))\nInkompatibel mit \"Effizienz verbessern\"."
+					},
+					"cf_reduce_cost1":{
+						"name":"Kosten reduzieren (1/2)",
+						"description":"Reduziere die Anschaffungskosten einer Maschine um 10% für CocoaFusion One, CocoaFusion Duo und CocoaFusion Pulse."
+					},
+					"cf_reduce_cost2":{
+						"name":"Kosten reduzieren (2/2)",
+						"description":"Reduziere die Anschaffungskosten einer Maschine um 20% (Inkl. Rabatt von Kosten reduzieren (1/2)) für alle CocoaFusion Produktionsmaschinen."
+					},
+					"cf_reduce_maintenance1":{
+						"name":"Unterhalt reduzieren (1/2)",
+						"description":"Reduziere die Unterhaltskosten einer Maschine um 10% für CocoaFusion One, CocoaFusion Duo und CocoaFusion Pulse."
+					},
+					"cf_reduce_maintenance2":{
+						"name":"Unterhalt reduzieren (2/2)",
+						"description":"Reduziere die Unterhaltskosten einer Maschine um 20% (Inkl. Rabatt von Unterhalt reduzieren (1/2)) für alle CocoaFusion Produktionsmaschinen."
+					},
+					"cf_reduce_employee_requirement1":{
+						"name":"Benötigte Angestellte reduzieren (1/2)",
+						"description":"Reduziere die Benötigte Anzahl Arbeiter pro Maschine um 1 für CocoaFusion Duo und 2 für CocoaFusion Pulse.\nInkompatibel mit \"Ressourcenverbrauch reduzieren\"."
+					},
+					"cf_reduce_employee_requirement2":{
+						"name":"Benötigte Angestellte reduzieren (2/2)",
+						"description":"Reduziere die Benötigte Anzahl Arbeiter pro Maschine um 1 für CocoaFusion One, 2 für CocoaFusion Duo, 3 für CocoaFusion Pulse, 4 für CocoaFusion Apex und 5 für CocoaFusion Zenith. (Inkl. Reduktion von Benötigte Angestellte reduzieren (1/2))\nInkompatibel mit \"Ressourcenverbrauch reduzieren\"."
+					},
+					"cf_reduce_resource_consumption1":{
+						"name":"Ressourcenverbrauch reduzieren (1/2)",
+						"description":"CocoaFusion One, CocoaFusion Duo und CocoaFusion Pulse benutzen Ressourcen etwas effizienter.\nInkompatibel mit \"Benötigte Angestellte reduzieren\"."
+					},
+					"cf_reduce_resource_consumption2":{
+						"name":"Ressourcenverbrauch reduzieren (2/2)",
+						"description":"CocoaFusion Apex und CocoaFusion Zenith benutzen Ressourcen etwas effizienter.\nInkompatibel mit \"Benötigte Angestellte reduzieren\"."
+					},
+					
+				},
+				"quantumcreme_production":{
+					"tab_title":"QuantumCrème",
+					"tab_tooltip":"Cutting-edge technology for luxurious chocolate with velvety smoothness, complex flavor depth, and flawless texture.",
+					"qc_alpha_unlock":{
+						"name":"Unlock QuantumCrème Α",
+						"description":"Nanofeine Vermahlung der Kakaomasse für besonders cremige Grundtexturen."
+					},
+					"qc_beta_unlock":{
+						"name":"Unlock QuantumCrème Β",
+						"description":"Molekulare Aromenerfassung – verstärkt natürliche Kakaonoten und Nuancen."
+					},
+					"qc_gamma_unlock":{
+						"name":"Unlock QuantumCrème Γ",
+						"description":"Adaptive Temperierungssteuerung für perfekten Glanz und seidige Konsistenz."
+					},
+					"qc_delta_unlock":{
+						"name":"Unlock QuantumCrème Δ",
+						"description":"KI-gesteuerte Geschmacksoptimierung – jede Charge wird individuell kalibriert."
+					},
+					"qc_omega_unlock":{
+						"name":"Unlock QuantumCrème Ω",
+						"description":"FVollautonome Luxusproduktion: absolute Reinheit, minimaler Ausschuss, maximaler Genuss."
+					},
+					"qc_improve_efficiency1":{
+						"name":"Effizienz verbessern (1/2)",
+						"description":"Erhöhe die Produktionsrate um 5% für QuantumCrème Α und QuantumCrème Β.\nInkompatibel mit\"Qualität verbessern\"."
+					},
+					"qc_improve_efficiency2":{
+						"name":"Effizienz verbessern (2/2)",
+						"description":"Erhöhe die Produktionsrate um 10% für alle QuantumCrème Produktionsmaschinen. (Inkl. Boost von Effizienz verbessern (1/2))\nInkompatibel mit \"Qualität verbessern\"."
+					},
+					"qc_improve_quality1":{
+						"name":"Qualität verbessern (1/2)",
+						"description":"Erhöhe die Qualität der von QuantumCrème Α and QuantumCrème Β Produzierten Schokolade um 0.05.\nInkompatibel mit \"Effizienz verbessern\"."
+					},
+					"qc_improve_quality2":{
+						"name":"Qualität verbessern (2/2)",
+						"description":"Erhöhe die Qualität der von allen QuantumCrème Produktionsmaschinen produzierten Schokolade um 0.1. (Inkl. Boost von Qualität verbessern (1/2))\nInkompatibel mit \"Effizienz verbessern\"."
+					},
+					"qc_reduce_cost1":{
+						"name":"Kosten reduzieren (1/2)",
+						"description":"Reduziere die Anschaffungskosten einer Maschine um 10% für QuantumCrème Α, QuantumCrème Β und QuantumCrème Γ."
+					},
+					"qc_reduce_cost2":{
+						"name":"Kosten reduzieren (2/2)",
+						"description":"Reduziere die Anschaffungskosten einer Maschine um 20% (Inkl. Rabatt von Kosten reduzieren (1/2)) für alle QuantumCrème Produktionsmaschinen."
+					},
+					"qc_reduce_maintenance1":{
+						"name":"Unterhalt reduzieren (1/2)",
+						"description":"Reduziere die Unterhaltskosten einer Maschine um 10% für QuantumCrème Α, QuantumCrème Β und QuantumCrème Γ."
+					},
+					"qc_reduce_maintenance2":{
+						"name":"Unterhalt reduzieren (2/2)",
+						"description":"Reduziere die Unterhaltskosten einer Maschine um 20% (Inkl. Rabatt von Unterhalt reduzieren (1/2)) für alle QuantumCrème Produktionsmaschinen."
+					},
+					"qc_reduce_employee_requirement1":{
+						"name":"Benötigte Angestellte reduzieren (1/2)",
+						"description":"Reduziere die Benötigte Anzahl Arbeiter pro Maschine um 1 für QuantumCrème Β und 2 für QuantumCrème Γ.\nInkompatibel mit \"Ressourcenverbrauch reduzieren\"."
+					},
+					"qc_reduce_employee_requirement2":{
+						"name":"Benötigte Angestellte reduzieren (2/2)",
+						"description":"Reduziere die Benötigte Anzahl Arbeiter pro Maschine um 1 für QuantumCrème Α, 2 für QuantumCrème Β, 3 für QuantumCrème Γ, 4 für QuantumCrème Δ und 5 für QuantumCrème Ω. (Inkl. Reduktion von Benötigte Angestellte reduzieren (1/2))\nInkompatibel mit \"Ressourcenverbrauch reduzieren\"."
+					},
+					"qc_reduce_resource_consumption1":{
+						"name":"Ressourcenverbrauch reduzieren (1/2)",
+						"description":"QuantumCrème One, QuantumCrème Β und QuantumCrème Γ benutzen Ressourcen etwas effizienter.\nInkompatibel mit \"Benötigte Angestellte reduzieren\"."
+					},
+					"qc_reduce_resource_consumption2":{
+						"name":"Ressourcenverbrauch reduzieren (2/2)",
+						"description":"QuantumCrème Δ und QuantumCrème Ω benutzen Ressourcen etwas effizienter.\nInkompatibel mit \"Benötigte Angestellte reduzieren\"."
+					},
+					
+				},
+				"workplace":{
+					"tab_title":"Arbeitsplatz",
+					"tab_tooltip":"Bringe deinen Arbeitsplatz auf das Nächste Level und verbessere die Zufriedenheit und Kompetenz der Angestellten.",
+					"workplace_root":{
+						"name":"Arbeitsplatz Ursprung",
+						"description":"Der Ursprung der anderen Upgrades"
+					},
+					"training_program1":{
+						"name":"Trainingsprogramm (1/2)",
+						"description":"Setze Schulungen ein, bei denen die Mitarbeiter ihre Fertigkeiten um 10 % verbessern können."
+					},
+					"training_program2":{
+						"name":"Trainingsprogramm (2/2)",
+						"description":"Verbesserte Schulungen helfen deinen Mitarbeitern, ihre Fertigkeiten um weitere 20 % zu steigern (additiv)."
+					},
+					"break_room":{
+						"name":"Pausenraum",
+						"description":"Richte einen Pausenraum für deine Mitarbeiter ein, damit sie Dampf ablassen können. Steigert die Zufriedenheit um 0.05."
+						
+					},
+					"performance_bonuses":{
+						"name":"Leistungsboni",
+						"description":"Führe Leistungsboni ein, um deine Mitarbeiter zu motivieren, ihre Produktivität zu steigern."
+					},
+					"employee_of_the_month":{
+						"name":"Mitarbeiter des Monats",
+						"description":"Führe die Auszeichnung \"Mitarbeiter des Monats\" ein. Steigert Zufriedenheit und Mitarbeiterbewertung um 5 %."
+					}
+				},
+				"marketing":{
+					"tab_title":"Marketing",
+					"tab_tooltip":"Vergrössere die Reichweite deiner Firma um mehr Schokolade zu verkaufen.",
+					"marketing_root": {
+						"name": "Marketing Root",
+						"description": "Your Marketing team."
+					},
+					"billboard_ads1": {
+						"name": "Lokale Werbeplakate",
+						"description": "Starte deine erste Plakatkampagne, um die Aufmerksamkeit von Passanten zu gewinnen und nahe Kunden anzuziehen."
+					},
+					"social_media_ads1": {
+						"name": "Social Media Presenz",
+						"description": "Erstelle offizielle Markenprofile und beginne, auf beliebten sozialen Plattformen mit dem Publikum zu interagieren."
+					},
+					"billboard_ads2": {
+						"name": "Grosse Werbeplakatkampagne",
+						"description": "Erweitere dein Aussenwerbenetzwerk auf wichtige Regionen für höhere Sichtbarkeit und Markenbekanntheit."
+					},
+					"tv_ads1": {
+						"name": "TV-Wernespots",
+						"description": "Produziere kurze TV-Werbespots, um ein breites Publikum zu erreichen und Glaubwürdigkeit bei der Allgemeinheit aufzubauen."
+					},
+					"social_media_ads2": {
+						"name": "Gezielte Online Kampagnen",
+						"description": "Nutze fortschrittliche Analysen, um personalisierte Werbung zu liefern und das Online-Engagement zu maximieren."
+					},
+					"celebrity_endorsement1": {
+						"name": "Influencer-Kooperation",
+						"description": "Arbeite mit Influencern zusammen, um deine Produkte über glaubwürdige und vertraute Stimmen zu bewerben."
+					},
+					"tv_ads2": {
+						"name": "Prime-Time TV Kampagne",
+						"description": "Führe gross angelegte Werbekampagnen während der Prime-Time-Slots durch, um die Aufmerksamkeit der Zuschauer zu dominieren."
+					},
+					"sponsoring1": {
+						"name": "Event Sponsoring",
+						"description": "Unterstütze Community- und Branchenveranstaltungen, um Markenreputation und Sichtbarkeit zu stärken."
+					},
+					"celebrity_endorsement2": {
+						"name": "Promi-Partnerschaft",
+						"description": "Sichere dir einen Vertrag mit einer bekannten Persönlichkeit, um deine Marke zu repräsentieren und das öffentliche Image zu verstärken."
+					},
+					"holiday_campaigns": {
+						"name": "Feiertagskampagne",
+						"description": "Starte zeitlich begrenzte Angebote und Festtagswerbung, um von der Spitzenkaufzeit während der Feiertage zu profitieren."
+					},
+					"sponsoring2": {
+						"name": "Grosse Sponsoringverträge",
+						"description": "Investiere in groß angelegte Sponsoringmaßnahmen, wie Sportligen oder kulturelle Events, für massive Reichweite und Prestige.."
+					}
+				}
+			},
+			"money_trace":{
+				"title":"Transaktionsverlauf und Vorhersage",
+				"cause":"Einkommensquelle/Ausgabegrund",
+				"change":"Kontostandsänderung",
+				"balance":"Kontostand nach Transaktion",
+				"status":"Status",
+				"contract_with": "Vertrag mit {0}",
+				"transaction_completed":"Transaktion abgeschlossen",
+				"start_balance":"Kontostand zum Quartalsstart",
+				"balance_indicator":"Kontostand",
+				"resource_contracts":"Alle Ressourcenverträge",
+				"event_effect":"Auswirkung des Events {0}",
+				"events":"Eventauswirkungen",
+				"perk_effect":"Auswirkungen der F&E-Verbesserung {0}",
+				"rnd_perks":"Auswirkung von F&E-Verbesserungen",
+				"pre_player_action_balance":"Kontostand vor Spieleraktionen",
+				"player_actions":"Spieleraktionen",
+				"rnd_buy":"Kauf von F&E-Verbesserung {0}",
+				"pm_buy":"Kauf von Produktionsmaschinen",
+				"expected_sales":"Erwarteter Umsatz",
+				"transaction_not_completed":"Geplante Transaktion",
+				"pm_maintenance":"Unterhalt von Produktionsmaschinen.",
+				"maintenance":"Unterhalt von {0} Maschinen",
+				"employee_salaries":"Lohn der Angestellten",
+				"employee_salary":"Lohn für {0}",
+				"taxes":"Gewinnsteuer"
+			},
+			"rival_companies":{
+				"bergspitz_schoggi":"Bergspitz Schoggi",
+				"budgetella":"Budgetella",
+				"cailletto":"Cailletto",
+				"chocofrei":"ChocoFrei",
+				"confiserie_huepferli":"Confiserie Hüpferli",
+				"ferrorico":"FerroRico",
+				"laederuf":"Läderuf",
+				"linde_sprung":"Linde & Sprung",
+				"maestrino":"Maestrino",
+				"ragusso":"Ragusso",
+				"ritterkeks":"Ritterkeks",
+				"solarsnax":"SolarSnax",
+				"villerli":"Villerli"
+			}
+		}
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"num_id":4,
+	"tree_members":[
+		["marketing_root"],
+		["social_media_ads1","billboard_ads1"],
+		["social_media_ads2","tv_ads1","billboard_ads2"],
+		["celebrity_endorsement1","tv_ads2","sponsoring1"],
+		["celebrity_endorsement2","holiday_campaigns","sponsoring2"]
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"resource": "nuts",
+	"duration_range": [
+		4,
+		6
+	],
+	"cancel_notice": 1,
+	"base_values": {
+		"quality": -0.47,
+		"reliability": 0.53,
+		"base_price": 3.01,
+		"capacity": 575674,
+		"active": true,
+		"active_contracts": 0,
+		"contracts": []
+	}
+}

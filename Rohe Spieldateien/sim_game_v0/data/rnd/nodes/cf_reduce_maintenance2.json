@@ -1,0 +1,57 @@
+{
+	"base_price": 7500000,
+	"parents": ["cf_reduce_maintenance1","cf_reduce_cost2"],
+	"parent_requirement_type":["and",0],
+	"upgrade_time":20000,
+	"base_success_probability":1,
+	"name":"cf_reduce_maintenance2",
+	"start_unlocked":false,
+	"auto_activate":true,
+	"employee_type":"rnd",
+	"buy_requirements":
+	{
+		"type":"none"
+	},
+	"effects":[
+		{
+			"effect_type":"var",
+			"effect_requirements":{"type":"none"},
+			"period":0,
+			"variable":"production_methods.cocoafusion_one.maintenance_cost",
+			"value":0.9,
+			"op":"mult",
+		},
+		{
+			"effect_type":"var",
+			"effect_requirements":{"type":"none"},
+			"period":0,
+			"variable":"production_methods.cocoafusion_duo.maintenance_cost",
+			"value":0.9,
+			"op":"mult",
+		},
+		{
+			"effect_type":"var",
+			"effect_requirements":{"type":"none"},
+			"period":0,
+			"variable":"production_methods.cocoafusion_pulse.maintenance_cost",
+			"value":0.9,
+			"op":"mult",
+		},
+		{
+			"effect_type":"var",
+			"effect_requirements":{"type":"none"},
+			"period":0,
+			"variable":"production_methods.cocoafusion_apex.maintenance_cost",
+			"value":0.8,
+			"op":"mult",
+		},
+		{
+			"effect_type":"var",
+			"effect_requirements":{"type":"none"},
+			"period":0,
+			"variable":"production_methods.cocoafusion_zenith.maintenance_cost",
+			"value":0.8,
+			"op":"mult",
+		}
+	]
+}

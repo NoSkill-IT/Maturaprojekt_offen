@@ -1,0 +1,13 @@
+{
+	"num_id":1,
+	"tree_members":[
+		["cf_one_unlock"],
+		["cf_improve_efficiency1","cf_improve_quality1"],
+		["cf_duo_unlock"],
+		["cf_reduce_cost1","cf_reduce_employee_requirement1"],
+		["cf_reduce_maintenance1","cf_pulse_unlock","cf_reduce_resource_consumption1"],
+		["cf_improve_efficiency2","cf_improve_quality2"],
+		["cf_apex_unlock"],
+		["cf_reduce_cost2","cf_reduce_employee_requirement2"],
+		["cf_reduce_maintenance2","cf_zenith_unlock","cf_reduce_resource_consumption2"]]
+}

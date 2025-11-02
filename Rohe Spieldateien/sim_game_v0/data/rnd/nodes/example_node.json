@@ -1,0 +1,33 @@
+{
+	"base_price": 0,				#base Price for unlocking this node
+	"parents": [],					#a list of Nodes that act as this nodes parents, [] if it is the root
+	"parent_requirement_type":[],	#["and", 0] if all parents need to be unlocked, ["or",0] if just one of them, ["x_of", x] means x need to be unlocked, if root, this can be ommitted
+	"upgrade_time":0,				#how many total work-hours of the RnD-team this will take
+	"base_success_probability":1,	#probability, for this upgrade to be successful
+	"name":"",						#Id of this node
+	"start_unlocked": true			#If this node is already unlocked at the beginning
+	"auto_activate": true			#If this Node is automatically activated when unlocked
+	"employee_type":""				#the employee group working on this project
+	"buy_requirements":
+	{
+		"type":"",					#"link" or "req", or "none"
+		"requirements":[],			#if "type" == "link", list of reqs  or req_links, same as buy_requirements
+		"link_type":"",				#if "type" == "link", "and", "or", "x_of"
+		"link_num":0,				#if "type" == "link", and "link_type" == "x_of", number of required reqs
+		"variable":"",				#if "type" == "req", variable to be checked
+		"value":0,					#if "type" == "req", value for the variable to be compared to
+		"comp":""					#if "type" == "req", comparasion operation: "==", "!=", ">", "<", "<=", ">=", "in_", "_in"
+	},
+	"effects":[						#one member per effect
+		{
+			"effect_type":"",			#"func" or "var", if the effect is a change to a variable, or a function to execute
+			"effect_requirements":{},	#requirement, same syntax like "buy_requirements"
+			"period":					#how frequently the effect is executed 0 means just once
+			"variable":""				#name of the variable to be changed if "effect_type" == "var"
+			"value":					#value for the variable to modified
+			"op":""						#operation for variable and value, "set", "add" or "mult"
+			"function":""				#function to be executed if "effect_type" == "func"
+			"parameters":[]				#list of parameters for the function
+		}
+	]
+}

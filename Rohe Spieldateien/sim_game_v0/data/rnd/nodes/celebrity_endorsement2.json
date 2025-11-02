@@ -1,0 +1,26 @@
+{
+	"base_price": 20000000,
+	"parents": ["celebrity_endorsement1","tv_ads2"],
+	"parent_requirement_type":["and",0],	
+	"upgrade_time":15000,
+	"base_success_probability":0.9,
+	"name":"celebrity_endorsement2",
+	"start_unlocked":false,
+	"auto_activate":true,
+	"employee_type":"marketing",
+	"buy_requirements":
+	{
+		"type":"none"
+	},
+	"effects":
+	[
+		{
+			"effect_type":"var",
+			"effect_requirements":{"type":"none"},
+			"period":0,
+			"variable":"publicity",
+			"value":2,
+			"op":"mult",
+		}
+	]
+}

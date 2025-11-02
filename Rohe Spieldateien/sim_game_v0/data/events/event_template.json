@@ -1,0 +1,32 @@
+{
+	"event_name":"",							#The Name of this Event
+	"num_id": 0							#priority for generating event
+	"affected_variables":[],			#Is an Array of Names of the Variables affected by this event.
+	
+	"delays":[],						#in the same Order of the "affected_variables" list, sets delays for each variable.
+	 
+	"phase_duration_ranges":[],			#Contains one element per phase in this Event, 
+										 each element is an Array with two entries, indicating lower and upper bound for the duration
+	
+	"affected_from_random":[],			#Contains one element per Variable affected from the event, 
+										 each giving a coefficient to how much the variable with the same index is affected by the random value
+	
+	"phase_base_values":[],				#Contains one element i per Variable affected from the event, 
+										 Each Element i contains one element j per phase in this event.
+										 Each Element j of the inner array signals the base value for a variable at the end of that specific phase		
+
+	"value_random_range":[],			#Contains one element per phase in this Event, 
+										 Each element is a Range for the random factor to this phase' end value.
+
+	"special_events":[],				#Contains 2N elements, where N is the amount of Phases in this event,
+										Each Element is a List of one time events at the beginning or end of a phase
+										events contains a name/ID for a special_event_type
+										
+	"execution_times":[],				#Contains one element per Variable affected from the event,
+										 Each element indicates if an effect is applied before or after the players turn
+										
+	"volatility":[],					#Contains one element per Variable affected from the event,
+										 each Element indicates how much the variable can randomly deviate from the base random generation 
+	"base_probability":"",				#the base probability for an event to happen
+	"excludes":[]						#List of other event names that can't happen, whilst this event is active
+}

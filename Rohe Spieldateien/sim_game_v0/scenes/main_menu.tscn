@@ -1,0 +1,356 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvr8di1gx8sys"]
+
+[ext_resource type="Script" uid="uid://dkq28c5g0mh3v" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Theme" uid="uid://vtujw8nrq1fy" path="res://scenes/theme.tres" id="2_ekxnf"]
+
+[sub_resource type="Theme" id="Theme_rhts7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6cm7"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = SubResource("Theme_rhts7")
+script = ExtResource("1_l6cm7")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 1890.0
+offset_bottom = 1093.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_l6cm7")
+
+[node name="main_menu_content" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 0
+
+[node name="title" type="RichTextLabel" parent="main_menu_content"]
+custom_minimum_size = Vector2(1920, 700)
+layout_mode = 2
+theme = ExtResource("2_ekxnf")
+bbcode_enabled = true
+text = "[color=brown][font_size=200]Chocolate Tycoon[/font_size][/color]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="main_menu_bar" type="HBoxContainer" parent="main_menu_content"]
+custom_minimum_size = Vector2(0, 380)
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="new_game" type="Button" parent="main_menu_content/main_menu_bar"]
+custom_minimum_size = Vector2(477, 0)
+layout_mode = 2
+theme = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 50
+text = "NEW GAME"
+autowrap_mode = 3
+
+[node name="load_game" type="Button" parent="main_menu_content/main_menu_bar"]
+custom_minimum_size = Vector2(477, 0)
+layout_mode = 2
+theme = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 50
+text = "LOAD GAME
+"
+autowrap_mode = 3
+
+[node name="settings" type="Button" parent="main_menu_content/main_menu_bar"]
+custom_minimum_size = Vector2(477, 0)
+layout_mode = 2
+theme = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 50
+text = "OPTIONS"
+autowrap_mode = 3
+
+[node name="leave_game" type="Button" parent="main_menu_content/main_menu_bar"]
+custom_minimum_size = Vector2(477, 0)
+layout_mode = 2
+theme = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 50
+text = "LEAVE GAME"
+autowrap_mode = 3
+
+[node name="settings" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="settings_title" type="RichTextLabel" parent="settings"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 0
+offset_left = 710.0
+offset_top = 100.0
+offset_right = 1210.0
+offset_bottom = 200.0
+theme = ExtResource("2_ekxnf")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "Options"
+horizontal_alignment = 1
+
+[node name="all_settings" type="VBoxContainer" parent="settings"]
+layout_mode = 0
+offset_left = 658.0
+offset_top = 200.0
+offset_right = 1262.0
+offset_bottom = 240.0
+
+[node name="language_setting" type="HBoxContainer" parent="settings/all_settings"]
+layout_mode = 2
+alignment = 1
+
+[node name="language_label" type="Label" parent="settings/all_settings/language_setting"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme = ExtResource("2_ekxnf")
+text = "Language"
+
+[node name="language_option" type="OptionButton" parent="settings/all_settings/language_setting"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme = ExtResource("2_ekxnf")
+alignment = 1
+
+[node name="resolution_setting" type="HBoxContainer" parent="settings/all_settings"]
+layout_mode = 2
+
+[node name="resolution_label" type="Label" parent="settings/all_settings/resolution_setting"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme = ExtResource("2_ekxnf")
+text = "Language"
+
+[node name="resolution_option" type="OptionButton" parent="settings/all_settings/resolution_setting"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme = ExtResource("2_ekxnf")
+alignment = 1
+
+[node name="window_mode_setting" type="HBoxContainer" parent="settings/all_settings"]
+layout_mode = 2
+
+[node name="window_mode_label" type="Label" parent="settings/all_settings/window_mode_setting"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme = ExtResource("2_ekxnf")
+text = "Language"
+
+[node name="window_mode_option" type="OptionButton" parent="settings/all_settings/window_mode_setting"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme = ExtResource("2_ekxnf")
+alignment = 1
+
+[node name="settings_management" type="HBoxContainer" parent="settings/all_settings"]
+layout_mode = 2
+
+[node name="apply" type="Button" parent="settings/all_settings/settings_management"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Apply Settings"
+
+[node name="back_to_main" type="Button" parent="settings/all_settings/settings_management"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Back to Main Menu"
+
+[node name="new_game" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="confirm" type="VBoxContainer" parent="new_game"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 0
+offset_left = 610.0
+offset_top = 200.0
+offset_right = 1310.0
+offset_bottom = 240.0
+
+[node name="confirm_text" type="Label" parent="new_game/confirm"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+autowrap_mode = 2
+
+[node name="custom_name" type="LineEdit" parent="new_game/confirm"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+theme = ExtResource("2_ekxnf")
+
+[node name="seed" type="HBoxContainer" parent="new_game/confirm"]
+layout_mode = 2
+
+[node name="seed_text" type="Label" parent="new_game/confirm/seed"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+autowrap_mode = 2
+
+[node name="seed" type="LineEdit" parent="new_game/confirm/seed"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ekxnf")
+
+[node name="buttons" type="HBoxContainer" parent="new_game/confirm"]
+layout_mode = 2
+
+[node name="confirm" type="Button" parent="new_game/confirm/buttons"]
+layout_mode = 2
+
+[node name="cancel" type="Button" parent="new_game/confirm/buttons"]
+layout_mode = 2
+
+[node name="new_game_title" type="RichTextLabel" parent="new_game"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 0
+offset_left = 710.0
+offset_top = 100.0
+offset_right = 1210.0
+offset_bottom = 200.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Save Game"
+horizontal_alignment = 1
+
+[node name="slot_selection" type="VBoxContainer" parent="new_game"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 0
+offset_left = 610.0
+offset_top = 200.0
+offset_right = 1110.0
+offset_bottom = 980.0
+theme_override_constants/separation = 12
+
+[node name="slot_1" type="Button" parent="new_game/slot_selection"]
+custom_minimum_size = Vector2(0, 186)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Slot 1
+{}"
+
+[node name="slot_2" type="Button" parent="new_game/slot_selection"]
+custom_minimum_size = Vector2(0, 186)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Slot 2
+{}"
+
+[node name="slot_3" type="Button" parent="new_game/slot_selection"]
+custom_minimum_size = Vector2(0, 186)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Slot 3
+{}"
+
+[node name="slot_4" type="Button" parent="new_game/slot_selection"]
+custom_minimum_size = Vector2(0, 186)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Slot 4
+{}"
+
+[node name="load_game" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="confirm" type="VBoxContainer" parent="load_game"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 0
+offset_left = 610.0
+offset_top = 200.0
+offset_right = 1310.0
+offset_bottom = 240.0
+
+[node name="confirm_text" type="Label" parent="load_game/confirm"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+autowrap_mode = 2
+
+[node name="custom_name" type="LineEdit" parent="load_game/confirm"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+theme = ExtResource("2_ekxnf")
+
+[node name="buttons" type="HBoxContainer" parent="load_game/confirm"]
+layout_mode = 2
+
+[node name="confirm" type="Button" parent="load_game/confirm/buttons"]
+layout_mode = 2
+
+[node name="cancel" type="Button" parent="load_game/confirm/buttons"]
+layout_mode = 2
+
+[node name="load_game_title" type="RichTextLabel" parent="load_game"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 0
+offset_left = 710.0
+offset_top = 100.0
+offset_right = 1210.0
+offset_bottom = 200.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Save Game"
+horizontal_alignment = 1
+
+[node name="slot_selection" type="VBoxContainer" parent="load_game"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 0
+offset_left = 610.0
+offset_top = 200.0
+offset_right = 1110.0
+offset_bottom = 980.0
+theme_override_constants/separation = 12
+
+[node name="slot_1" type="Button" parent="load_game/slot_selection"]
+custom_minimum_size = Vector2(0, 186)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Slot 1
+{}"
+
+[node name="slot_2" type="Button" parent="load_game/slot_selection"]
+custom_minimum_size = Vector2(0, 186)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Slot 2
+{}"
+
+[node name="slot_3" type="Button" parent="load_game/slot_selection"]
+custom_minimum_size = Vector2(0, 186)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Slot 3
+{}"
+
+[node name="slot_4" type="Button" parent="load_game/slot_selection"]
+custom_minimum_size = Vector2(0, 186)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Slot 4
+{}"
+
+[connection signal="pressed" from="main_menu_content/main_menu_bar/new_game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="main_menu_content/main_menu_bar/load_game" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="main_menu_content/main_menu_bar/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="main_menu_content/main_menu_bar/leave_game" to="." method="_on_leave_game_pressed"]
+[connection signal="pressed" from="settings/all_settings/settings_management/apply" to="." method="_on_apply_pressed"]
+[connection signal="pressed" from="settings/all_settings/settings_management/back_to_main" to="." method="_on_back_to_main_pressed"]
+[connection signal="pressed" from="new_game/confirm/buttons/confirm" to="." method="_on_confirm_new_pressed"]
+[connection signal="pressed" from="new_game/confirm/buttons/cancel" to="." method="_on_cancel_new_pressed"]
+[connection signal="pressed" from="new_game/slot_selection/slot_1" to="." method="_on_slot_new_pressed" binds= [1]]
+[connection signal="pressed" from="new_game/slot_selection/slot_2" to="." method="_on_slot_new_pressed" binds= [2]]
+[connection signal="pressed" from="new_game/slot_selection/slot_3" to="." method="_on_slot_new_pressed" binds= [3]]
+[connection signal="pressed" from="new_game/slot_selection/slot_4" to="." method="_on_slot_new_pressed" binds= [4]]
+[connection signal="pressed" from="load_game/confirm/buttons/confirm" to="." method="_on_confirm_load_pressed"]
+[connection signal="pressed" from="load_game/confirm/buttons/cancel" to="." method="_on_cancel_load_pressed"]
+[connection signal="pressed" from="load_game/slot_selection/slot_1" to="." method="_on_slot_load_pressed" binds= [1]]
+[connection signal="pressed" from="load_game/slot_selection/slot_2" to="." method="_on_slot_load_pressed" binds= [2]]
+[connection signal="pressed" from="load_game/slot_selection/slot_3" to="." method="_on_slot_load_pressed" binds= [3]]
+[connection signal="pressed" from="load_game/slot_selection/slot_4" to="." method="_on_slot_load_pressed" binds= [4]]

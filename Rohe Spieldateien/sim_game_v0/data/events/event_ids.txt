@@ -1,0 +1,7 @@
+inflation
+high_inflation
+deflation
+cancel_contracts
+reduce_capacity
+disable_companies
+economic_cycle

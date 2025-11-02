@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1twy3foo17h2"]
+
+[ext_resource type="Script" uid="uid://blxiyp513avb6" path="res://scripts/custom_nodes/rnd_tab.gd" id="1_hnrjc"]
+
+[node name="rnd_tab" type="Control"]
+custom_minimum_size = Vector2(1800, 900)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_hnrjc")
+
+[node name="graph" type="GraphEdit" parent="."]
+custom_minimum_size = Vector2(1800, 900)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+show_zoom_label = true
+show_grid_buttons = false
+show_minimap_button = false
+show_arrange_button = false

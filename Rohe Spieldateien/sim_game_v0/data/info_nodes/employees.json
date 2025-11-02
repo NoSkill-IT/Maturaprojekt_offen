@@ -1,0 +1,12 @@
+{
+	"position":[1,0],
+	"size":[1,2],
+	"title":{
+		"en_us":"Employees",
+		"de_ch":"Angestellte"
+	},
+	"info":{
+		"en_us":"You can set your desired number of employees per group in the \"Production and Employees\" tab, aswell as their salary and their work-hours.\nEmployees are hired at the end of the turn, based on a number of factors such as: Happiness, publicity and job supply\nHigher Salaries and fewer work hours increase Employee happiness.\nEmployee Happiness (among other stats) dictates how fast the employees can work, aswell as how likely employees are to stay at your company.\nThe function of every group are as follows:\n    HR: (Human Resources) Responsible for workplace improvement and keeping things running with the employees, always keep a few of them, to increase your employees happiness.\n    Workers: The Workers working at the production machines. You'll need them to produce chocolate\n    Marketing & Rnd: You need them to make progress on updates in the RnD/Improvement tree",
+		"de_ch":"Sie können die gewünschte Anzahl an Mitarbeitern pro Gruppe im Tab \"Produktion und Mitarbeiter\" festlegen, ebenso wie deren Gehalt und Arbeitsstunden.\nMitarbeiter werden am Ende der Runde basierend auf verschiedenen Faktoren eingestellt, wie zum Beispiel: Zufriedenheit, Öffentlichkeitsarbeit und Stellenangebot.\nHöhere Gehälter und weniger Arbeitsstunden steigern die Zufriedenheit der Mitarbeiter.\nDie Mitarbeiterzufriedenheit (neben anderen Statistiken) bestimmt, wie schnell die Mitarbeiter arbeiten können und wie wahrscheinlich es ist, dass sie in Ihrem Unternehmen bleiben.\nDie Funktionen jeder Gruppe sind wie folgt:\n    HR: (Human Resources) Verantwortlich für die Verbesserung des Arbeitsplatzes und dafür, dass alles mit den Mitarbeitern reibungslos läuft. Halten Sie immer einige von ihnen, um die Zufriedenheit Ihrer Mitarbeiter zu erhöhen.\n    Arbeiter: Die Arbeiter, die an den Produktionsmaschinen arbeiten. Sie werden benötigt, um Schokolade zu produzieren.\n    Marketing & Forschung & Entwicklung: Sie werden benötigt, um Fortschritte bei Updates im F&E/Verbesserungsbaum zu erzielen."
+	}
+}

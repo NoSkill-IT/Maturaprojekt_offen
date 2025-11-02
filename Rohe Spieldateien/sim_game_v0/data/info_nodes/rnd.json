@@ -1,0 +1,12 @@
+{
+	"position":[2,1],
+	"size":[1,1],
+	"title":{
+		"en_us":"Research and Development (RnD)",
+		"de_ch":"Forschung und Entwicklung (F&E)"
+	},
+	"info":{
+		"en_us":"You can unlock a number of improvements in the RnD tree, ranging from improving production methods and unlocking new production methods, over improving your workplace to marketing campaigns that increase your company's publicity.\nEach improvements requires money and work hours by an employee group. Each group always works on one project, and directly continues to the next one, once it has completed one.\nColors: [color=red]Locked (some requirement isn't fullfilled)[/color]    [color=gray]Available or in progress[/color]    [color=blue]Unlocked (inactive)[/color]    [color=green]Active[/color]",
+		"de_ch":"Sie können eine Reihe von Verbesserungen im F&E-Baum freischalten, angefangen bei der Verbesserung von Produktionsmethoden und dem Freischalten neuer Produktionsmethoden, über die Verbesserung Ihres Arbeitsplatzes bis hin zu Marketingkampagnen, die die Bekanntheit Ihres Unternehmens steigern.\nJede Verbesserung erfordert Geld und Arbeitsstunden einer Mitarbeitergruppe. Jede Gruppe arbeitet immer an einem Projekt und geht direkt zum nächsten über, sobald das derzeitige abgeschlossen ist.\nFarben: [color=red]Gesperrt (einige Anforderungen sind nicht erfüllt)[/color] [color=gray]Verfügbar oder in Bearbeitung[/color] [color=blue]Freigeschaltet (inaktiv)[/color] [color=green]Aktiv[/color]"
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"base_price": 0,
+	"parents": [],
+	"parent_requirement_type":[],	
+	"upgrade_time":0,
+	"base_success_probability":1,
+	"name":"marketing_root",
+	"start_unlocked":true,
+	"auto_activate":true,
+	"buy_requirements":
+	{
+		"type":"none"
+	},
+	"effects":[]
+}

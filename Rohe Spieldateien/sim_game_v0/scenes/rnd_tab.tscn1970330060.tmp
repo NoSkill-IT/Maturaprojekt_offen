@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1twy3foo17h2"]
+
+[ext_resource type="Script" uid="uid://blxiyp513avb6" path="res://scripts/custom_nodes/rnd_tab.gd" id="1_hnrjc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_628mm"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="rnd_tab" type="Control"]
+custom_minimum_size = Vector2(1800, 900)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_hnrjc")
+
+[node name="rnd_scroll" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(1800, 900)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="rnd_zoom" type="Control" parent="rnd_scroll"]
+layout_mode = 2
+
+[node name="columns" type="HBoxContainer" parent="rnd_scroll/rnd_zoom"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(1800, 900)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_628mm")

@@ -1,0 +1,11 @@
+{
+	"base_values":{
+		"reliability":0.9,
+		"publicity":625000,
+		"price":33,
+		"production_rate":660000,
+		"sentiment":0,
+		"stock":[]
+	},
+	"target_quality":0.4
+}

@@ -1,0 +1,12 @@
+{
+	"position":[0,1],
+	"size":[1,1],
+	"title":{
+		"en_us":"Finances",
+		"de_ch":"Finanzen"
+	},
+	"info":{
+		"en_us":"You can see your companys transaction history, aswell as a prediction of transactions that will happen between the end of your turn and the next one in the finances tab.\nDon't cut it to close, the cost of new resources next round isn't included in that prediction.\nYou'll be able to see relevant information about rivaling companies aswell, so you can adjust your strategy based on that knowledge.\nWatch out for inflation and the economic cycle, prices (and salaries) change quickly.",
+		"de_ch":"Sie können die Transaktionshistorie Ihres Unternehmens einsehen sowie eine Prognose der Transaktionen, die zwischen dem Ende Ihrer Runde und der nächsten stattfinden werden, im Finanz-Tab.\nSchneiden Sie es nicht zu knapp, die Kosten für neue Ressourcen in der nächsten Runde sind in dieser Prognose nicht enthalten. Sie werden auch relevante Informationen über konkurrierende Unternehmen sehen können, sodass Sie Ihre Strategie auf dieser Grundlage anpassen können. Achten Sie auf Inflation und den Wirtschaftszyklus, Preise (und Gehälter) ändern sich schnell."
+	}
+}

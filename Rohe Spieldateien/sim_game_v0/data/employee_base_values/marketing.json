@@ -1,0 +1,10 @@
+{
+	"active_employees":5,
+	"target_employees":5,
+	"salary":7500,
+	"employee_rating":1,
+	"happiness_modifiers":0,
+	"work_hours":8,
+	"average_salary":7500,
+	"job_supply":100000
+}

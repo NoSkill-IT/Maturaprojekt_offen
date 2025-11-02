@@ -1,0 +1,141 @@
+[gd_scene load_steps=3 format=3 uid="uid://poqmtehocret"]
+
+[ext_resource type="Script" uid="uid://q6x4umq74tvn" path="res://scripts/custom_nodes/employee_group_gui.gd" id="1_6ll8r"]
+[ext_resource type="Theme" uid="uid://vtujw8nrq1fy" path="res://scenes/theme.tres" id="1_7u2v5"]
+
+[node name="employee_group_gui" type="Panel"]
+custom_minimum_size = Vector2(430, 344)
+offset_right = 430.0
+script = ExtResource("1_6ll8r")
+
+[node name="container" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(410, 290)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 420.0
+offset_bottom = 290.0
+
+[node name="name" type="Label" parent="container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+
+[node name="description" type="Label" parent="container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="active_employees" type="Label" parent="container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="job_supply" type="Label" parent="container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="grid" type="GridContainer" parent="container"]
+layout_mode = 2
+columns = 3
+
+[node name="value_title" type="Label" parent="container/grid"]
+layout_mode = 2
+
+[node name="now_title" type="Label" parent="container/grid"]
+layout_mode = 2
+
+[node name="new_title" type="Label" parent="container/grid"]
+layout_mode = 2
+
+[node name="target_title" type="Label" parent="container/grid"]
+layout_mode = 2
+
+[node name="target_now" type="Label" parent="container/grid"]
+layout_mode = 2
+
+[node name="target_new" type="SpinBox" parent="container/grid"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("1_7u2v5")
+max_value = 1000.0
+rounded = true
+
+[node name="salary_title" type="Label" parent="container/grid"]
+layout_mode = 2
+
+[node name="salary_now" type="Label" parent="container/grid"]
+layout_mode = 2
+
+[node name="salary_new" type="SpinBox" parent="container/grid"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("1_7u2v5")
+max_value = 50000.0
+step = 200.0
+rounded = true
+suffix = "CHF"
+
+[node name="hours_title" type="Label" parent="container/grid"]
+layout_mode = 2
+
+[node name="hours_now" type="Label" parent="container/grid"]
+layout_mode = 2
+
+[node name="hours_new" type="SpinBox" parent="container/grid"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("1_7u2v5")
+min_value = 4.0
+max_value = 12.0
+step = 0.1
+value = 8.0
+suffix = "h"
+
+[node name="happiness_title" type="Label" parent="container/grid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="happiness_now" type="Label" parent="container/grid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="happiness_new" type="Label" parent="container/grid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="effectivity_title" type="Label" parent="container/grid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="effectivity_now" type="Label" parent="container/grid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="effectivity_new" type="Label" parent="container/grid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="sph_title" type="Label" parent="container/grid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="sph_now" type="Label" parent="container/grid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="sph_new" type="Label" parent="container/grid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="buttons" type="HBoxContainer" parent="container"]
+layout_mode = 2
+
+[node name="cancel" type="Button" parent="container/buttons"]
+custom_minimum_size = Vector2(203, 0)
+layout_mode = 2
+
+[node name="confirm" type="Button" parent="container/buttons"]
+custom_minimum_size = Vector2(203, 0)
+layout_mode = 2
+
+[connection signal="pressed" from="container/buttons/cancel" to="." method="_on_cancel"]
+[connection signal="pressed" from="container/buttons/confirm" to="." method="_on_confirm"]

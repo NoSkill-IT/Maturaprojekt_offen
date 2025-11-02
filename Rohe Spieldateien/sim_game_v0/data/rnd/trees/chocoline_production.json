@@ -1,0 +1,13 @@
+{
+	"num_id":0,
+	"tree_members":[
+		["cl_basic_unlock"],
+		["cl_improve_efficiency1","cl_improve_quality1"],
+		["cl_2000_unlock"],
+		["cl_reduce_cost1","cl_reduce_employee_requirement1"],
+		["cl_reduce_maintenance1","cl_pro_unlock","cl_reduce_resource_consumption1"],
+		["cl_improve_efficiency2","cl_improve_quality2"],
+		["cl_elite_unlock"],
+		["cl_reduce_cost2","cl_reduce_employee_requirement2"],
+		["cl_reduce_maintenance2","cl_ultra_unlock","cl_reduce_resource_consumption2"]]
+}

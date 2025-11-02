@@ -1,0 +1,12 @@
+{
+	"position":[3,1],
+	"size":[1,1],
+	"title":{
+		"en_us":"Resources",
+		"de_ch":"Ressourcen"
+	},
+	"info":{
+		"en_us":"In the game you need all four resources to produce chocolate, you can manage the stock of a resource (discard stock batches and decide usage priority)\nTo gain resources you need to make contracts, Click on a company to find out all the information you need about it.\nContracts deliver resources between rounds, they can then be used next round. That means you have to calculate resource needs a round in advance.",
+		"de_ch":"Im Spiel benötigen Sie alle vier Ressourcen, um Schokolade herzustellen. Sie können den Vorrat einer Ressource verwalten (bestimmte Vorräte verwerfen und die Nutzung priorisieren).\nUm Ressourcen zu gewinnen, müssen Sie Verträge abschließen. Klicken Sie auf ein Unternehmen, um alle Informationen darüber zu erhalten, die Sie benötigen."
+	}
+}

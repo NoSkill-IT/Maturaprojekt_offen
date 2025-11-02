@@ -1,0 +1,29 @@
+{
+	"base_price": 500000,
+	"parents": ["cl_basic_unlock"],
+	"parent_requirement_type":["and",0],	
+	"upgrade_time":5000,
+	"base_success_probability":0.98,
+	"name":"cl_2000_unlock",
+	"start_unlocked":false,
+	"auto_activate":true,
+	"employee_type":"rnd",
+	"buy_requirements":
+	{
+		"type":"req",
+		"variable":"production_methods.chocoline_basic.unlocked_machines",
+		"comp": ">",
+		"value":0
+	},
+	"effects":
+	[
+		{
+			"effect_type":"var",
+			"effect_requirements":{"type":"none"},
+			"period":0,
+			"variable":"production_methods.chocoline_2000.unlocked",
+			"value":true,
+			"op":"set",
+		}
+	]
+}

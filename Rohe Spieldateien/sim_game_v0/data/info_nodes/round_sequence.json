@@ -1,0 +1,12 @@
+{
+	"position":[0,0],
+	"size":[1,1],
+	"title":{
+		"en_us":"Round Sequence",
+		"de_ch":"Rundenablauf"
+	},
+	"info":{
+		"en_us":"Each round is the equivalent of three months in game time, which is 65 work days, A part of the simulation in a round is applied before you (the player) get to make your actions, a part after. After pressing the \"Continue to next round\" Button, wait a short time (like a second) for the next turn to be loaded properly.\nIn the first round, you won't be able to produce chocolate, bcause you'll need contracts first. Dont fire your employees though, you'll need them sooner than they could be rehired.\n\nCheck every tab (especially your contracts) every turn, it's easy to miss stuff\n\nThis game is a Rogue-lite. So if you run out of Money it's game over, immediately. Once you lose, the save will be deleted, so be careful.",
+		"de_ch":"Jede Runde dauert drei Monate in Spielzeit, das entspricht 65 Arbeitstagen. Dabei findet ein Teil der Simulierung vor den Aktionen des Spielers statt, ein Teil davon danach."
+	}
+}

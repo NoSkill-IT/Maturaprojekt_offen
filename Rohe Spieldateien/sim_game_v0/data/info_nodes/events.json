@@ -1,0 +1,12 @@
+{
+	"position":[3,0],
+	"size":[1,1],
+	"title":{
+		"en_us":"(Random) Events",
+		"de_ch":"(Zufällige) Events"
+	},
+	"info":{
+		"en_us":"You'll be able to see all events in the event tab. each event has a small description of what it does, and all variables and functions affected by an event is named.",
+		"de_ch":"Du wirst alle Ereignisse im Ereignis-Tab sehen können. Jedes Ereignis hat eine kurze Beschreibung dessen, was es bewirkt, und alle von einem Ereignis betroffenen Variablen und Funktionen sind benannt."
+	}
+}
