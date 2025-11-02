@@ -6,6 +6,8 @@ Installationsanweisungen Windows
 
 1. game_windows.zip herunterladen und entpacken.
 2. game.exe starten
+Falls beim Starten eine Fehlermeldung erscheint, muss in den Dateieigenschaften von game.exe der Zugriff freigegeben werden
+(bei "Die Datei stammt von einem anderen Computer. Der Zugriff wurde aus Sicherheitsgründen eventuell blockiert" das Häkchen bei "Zulassen" setzen)
 
 Installationsaweisungen MacOS
 
