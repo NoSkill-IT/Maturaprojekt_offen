@@ -202,7 +202,7 @@
 				}
 			},
 			"rnd":{
-				"tab_title": "Rnd",
+				"tab_title": "RnD",
 				"tab_tooltip": "Unlock perks to secure the future of your company",
 				"contents":{
 					
@@ -218,7 +218,7 @@
 							"short_event_overview": "Event functions"
 						},
 						"active_events":{
-							"active_events_title": "Active_events"
+							"active_events_title": "Active Events"
 						}
 					}
 				}
@@ -351,7 +351,9 @@
 				"events_dict.disable_companies.probability_modifier":"bancrupt company event probability",
 				"events_dict.reduce_capacity.probability_modifier":"reduce production capacity event probability",
 				"events_dict.high_inflation.probability_modifier":"high inflation event probability",
-				"events_dict.deflation.probability_modifier":"deflation event probability",				
+				"events_dict.deflation.probability_modifier":"deflation event probability",
+				"production_multiplier":"production multiplier",
+				"inflation":"Inflation"
 			},
 			"function_names":{
 				"event_cancel_contracts":"canceling contracts",
@@ -431,7 +433,7 @@
 			"employee_group_info":{
 				"active_employees":"active employees in this group: {0}\nYour employees have a rating of {1}",
 				"active_employees_tt":"will reach target of {0} employees in {1}",
-				"job_supply": "{0} people in Switzerland are interested in a job like this",
+				"job_supply": "{0} people are qualified for a job like this.",
 				"job_supply_tt": "don't interpret to much in this number,\n it merely serves as a guidance as to how quick new employees can be hired",
 				"value_title":"property",
 				"now_title":"last value",
@@ -925,11 +927,11 @@
 				"resource_contracts":"all resource contracts",
 				"event_effect":"effect of event {0}",
 				"events":"event effects",
-				"perk_effect":"effect of rnd perk {0}",
-				"rnd_perks":"rnd perk effects",
+				"perk_effect":"effect of RnD perk {0}",
+				"rnd_perks":"RnD perk effects",
 				"pre_player_action_balance":"balance before player actions",
 				"player_actions":"player actions",
-				"rnd_buy":"purchase of rnd perk {0}",
+				"rnd_buy":"purchase of RnD perk {0}",
 				"pm_buy":"purchase of production machines",
 				"expected_sales":"predicted sale revenue",
 				"transaction_not_completed":"planned transaction",

@@ -74,9 +74,9 @@ func load_node_info(node_id,tree_id,i,j):
 		if node_.total_upgrade_time == 0: 
 			$main_tabs/rnd/rnd_info/content/duration.text = language_dict["dynamic"]["rnd_node_info"]["instantly"]
 		elif node_.total_upgrade_time == node_.upgrade_time_left:
-			$main_tabs/rnd/rnd_info/content/duration.text = language_dict["dynamic"]["rnd_node_info"]["total_time"].format({"0":node_.total_upgrade_time, "1":ceil(node_.total_upgrade_time/(employee_groups[node_.employee_type].effectivity_per_day*employee_groups[node_.employee_type].active_employees*65))/4,"2":node_.employee_type})
+			$main_tabs/rnd/rnd_info/content/duration.text = language_dict["dynamic"]["rnd_node_info"]["total_time"].format({"0":node_.total_upgrade_time, "1":ceil(node_.total_upgrade_time/(employee_groups[node_.employee_type].effectivity_per_day*employee_groups[node_.employee_type].active_employees*65))/4,"2":language_dict["dynamic"]["employee_groups"][node_.employee_type]["name"]})
 		else:
-			$main_tabs/rnd/rnd_info/content/duration.text = language_dict["dynamic"]["rnd_node_info"]["remaining_time"].format({"1":node_.total_upgrade_time,"0":Utility.shorten_number(node_.total_upgrade_time-node_.upgrade_time_left)[0],"2":ceil(node_.upgrade_time_left/(employee_groups[node_.employee_type].effectivity_per_day*employee_groups[node_.employee_type].active_employees*65)/4),"3":node_.employee_type})
+			$main_tabs/rnd/rnd_info/content/duration.text = language_dict["dynamic"]["rnd_node_info"]["remaining_time"].format({"1":node_.total_upgrade_time,"0":Utility.shorten_number(node_.total_upgrade_time-node_.upgrade_time_left)[0],"2":ceil(node_.upgrade_time_left/(employee_groups[node_.employee_type].effectivity_per_day*employee_groups[node_.employee_type].active_employees*65)/4),"3":language_dict["dynamic"]["employee_groups"][node_.employee_type]["name"]})
 	if node_.unlocked:
 		$main_tabs/rnd/rnd_info/content/duration.visible = false
 		$main_tabs/rnd/rnd_info/content/active.text = language_dict["dynamic"]["rnd_node_info"]["toggle_effect"]
@@ -410,7 +410,7 @@ func setup_resource_tab():
 	load_rc_buttons()
 func sales_estimate_new():
 	var unallocated_workers = employee_groups["workers"].active_employees
-	var resource_copies: Dictionary
+	var resource_copies: Dictionary = {}
 	for i:resource_type in resources.values():
 		resource_copies[i.type_name] = i.copy()
 	for i in resource_copies.keys():
@@ -472,18 +472,18 @@ func sales_estimate_new():
 		supply_quality /= max(1.0, resource_copies["chocolate"].total_stored_amount)
 	else:
 		supply_quality = 0
-	var denom = sale_price - supply_quality * resource_copies["chocolate"].quality_coefficient
+	var denom = $main_tabs/sales/contents/company_infos/player_company_info/infos/price_new.value - supply_quality * resource_copies["chocolate"].quality_coefficient
 	if abs(denom) < 0.0001:
 		denom = 0.0001
 	var total_publicity := 0.0
 	var percieved_publicity
-	if s_d_price > 0 and sale_price > 0:
+	if s_d_price > 0 and $main_tabs/sales/contents/company_infos/player_company_info/infos/price_new.value > 0:
 		percieved_publicity = publicity * (1.0 + max(0.0, sentiment)) * (s_d_price / denom)**2
 		total_publicity = percieved_publicity
 	else:
 		percieved_publicity = publicity * (1.0 + max(0.0, sentiment))
 		total_publicity = publicity * (1.0 + max(0.0, sentiment))
-	var p_publicities: Dictionary
+	var p_publicities: Dictionary = {}
 	for i:rival_company in rival_companies.values():
 		var r_supply_quality := 0.0
 		if i.total_stock > 0:
@@ -517,7 +517,7 @@ func sales_estimate_new():
 
 func sales_estimate_current():
 	var unallocated_workers = employee_groups["workers"].active_employees
-	var resource_copies: Dictionary
+	var resource_copies: Dictionary = {}
 	for i:resource_type in resources.values():
 		resource_copies[i.type_name] = i.copy()
 	for i in resource_copies.keys():
@@ -594,7 +594,7 @@ func sales_estimate_current():
 	else:
 		percieved_publicity = publicity * (1.0 + max(0.0, sentiment))
 		total_publicity = publicity * (1.0 + max(0.0, sentiment))
-	var p_publicities: Dictionary
+	var p_publicities: Dictionary = {}
 	var r_denoms = {}
 	for i:rival_company in rival_companies.values():
 		var r_supply_quality := 0.0
@@ -693,7 +693,7 @@ func setup_sales_tab():
 	for i:rival_company in rival_companies.values():
 		var btn:Button = Button.new()
 		btn.add_theme_font_size_override("font_size",30)
-		btn.custom_minimum_size = Vector2(310,100)
+		btn.custom_minimum_size = Vector2(300,100)
 		btn.text = language_dict["dynamic"]["rival_companies"][i.id]
 		btn.pressed.connect( Callable(self,"load_rival_info").bind(i.id))
 		$main_tabs/sales/contents/computer_company_list/companies_scroll/companies_container.add_child(btn)
@@ -994,7 +994,7 @@ func _on_event_type_selected(event):
 		$main_tabs/events/event_info_panel/info_panel_container/description.text = language_dict["dynamic"]["events"][event.name]["description"]
 		var affected_var_list = ""
 		for k in range(event.affected_variables.size()):
-			affected_var_list += language_dict["dynamic"]["variable_names"][event.affected_variables[k]] + ", "
+			affected_var_list += language_dict["dynamic"]["variable_names"][event.affected_variables[k]] + "\n"
 		$main_tabs/events/event_info_panel/info_panel_container/affected_variables.text = language_dict["dynamic"]["event_infos"]["full_event_description"]["affected_variables"].format({"0":affected_var_list})
 		$main_tabs/events/event_info_panel/info_panel_container/probability.text = language_dict["dynamic"]["event_infos"]["full_event_description"]["probability"].format({"0":Utility.shorten_number(event.base_probability*100)[0],"1":Utility.shorten_number(event.probability_modifier*100)[0],"2": Utility.shorten_number(event.probability_modifier*100+event.base_probability*100)[0]})
 		$main_tabs/events/event_info_panel/info_panel_container/active.text = language_dict["dynamic"]["event_infos"]["full_event_description"]["active"].format({"0":event.active})
@@ -1009,7 +1009,7 @@ func _on_event_type_selected(event):
 		if event.excludes.size() > 0:
 			for k in range(event.excludes.size()-1):
 				excl_event_list += language_dict["dynamic"]["events"][event.excludes[k]]["name"] + ", "
-			excl_event_list += language_dict["dynamic"]["variable_names"][event.excludes[event.excludes.size()-1]]["name"]
+			excl_event_list += language_dict["dynamic"]["events"][event.excludes[event.excludes.size()-1]]["name"]
 			$main_tabs/events/event_info_panel/info_panel_container/excludes.text = language_dict["dynamic"]["event_infos"]["full_event_description"]["excludes"].format({"0":excl_event_list})
 		else:
 			$main_tabs/events/event_info_panel/info_panel_container/excludes.text = language_dict["dynamic"]["event_infos"]["full_event_description"]["excludes_none"]
@@ -1749,7 +1749,7 @@ func event_reduce_capacity():
 		var chosen_num = randf_range(0,sum-0.000001)
 		var chosen_company
 		for j in range(rp_companies.size()):
-			if chance_list[j][1] <= chosen_num and chance_list[j+1] > chosen_num:
+			if chance_list[j][1] <= chosen_num and chance_list[j+1][1] > chosen_num:
 				chosen_company = chance_list[j+1][0]
 		if rp_companies[chosen_company].active:
 			rp_companies[chosen_company].capacity = randi_range(0.5*rp_companies[chosen_company].capacity,rp_companies[chosen_company].capacity)

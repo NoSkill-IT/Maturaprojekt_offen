@@ -170,7 +170,7 @@
 									"current":"Jetzt:",
 									"new":"Neu:",
 									"price_title":"Verkaufspreis: ",
-									"sales_title":"Erwartetes Verkaufsvolumen:",
+									"sales_title":"Erwartete Verkäufe:",
 									"revenue_title":"Erwarteter Umsatz:"
 								},
 								"infos2":{
@@ -432,19 +432,19 @@
 			"employee_group_info":{
 				"active_employees":"Aktive Angestellte dieser Gruppe: {0}\nDeine Angestellten haben eine Bewertung von {1}",
 				"active_employees_tt":"Wird angestrebte Zielanzahl von {0} Angestellten in {1} erreichen",
-				"job_supply": "{0} Menschen in der Schweiz sind an Jobs von diesem Typ interessiert",
+				"job_supply": "{0} Menschen sind qualifiziert für diesen Job",
 				"job_supply_tt": "Ignoriere diese Nummer,\n Es gilt einfach, je höher diese Nummer, desto schneller findest du neue Angestellte",
 				"value_title":"Eigenschaft",
 				"now_title":"Aktueller Wert",
 				"new_title":"Neuer Wert",
-				"target":"Zielanzahl Angestellte:",
+				"target":"Ziel Angestellte:",
 				"salary":"Monatslohn:",
-				"hours":"Arbeitsstunden pro Tag:",
-				"happiness":"Erwartete Zufriedenheit:",
-				"effectivity": "Erwartete Produktivität pro Tag:",
+				"hours":"Arbeitsstunden:",
+				"happiness":"Zufriedenheit:",
+				"effectivity": "Produktivität pro Tag:",
 				"sph":"Stundenlohn:",
-				"cancel":"Änderungen bestätigen",
-				"confirm":"Änderungen zurücksetzen"
+				"cancel":"Werte zurücksetzen",
+				"confirm":"Bestätigen"
 			},
 			"employee_groups":{
 				"rnd":{"name":"Forscher und Ingenieure","description":"Entwickeln Verbesserungen"},
@@ -609,7 +609,7 @@
 				"unlock":"Verbesserung beginnen",
 				"locked":"Du kannst diese Verbesserung nicht freischalten.",
 				"in_progress":"Freischaltung in Arbeit",
-				"active_not_unlocked":"noch nicht"
+				"active_not_unlocked":"Noch nicht freigeschaltet"
 			},
 			"rnd_trees":{
 				"chocoline_production":{

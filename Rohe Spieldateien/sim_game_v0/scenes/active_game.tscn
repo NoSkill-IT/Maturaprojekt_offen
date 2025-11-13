@@ -164,38 +164,43 @@ offset_right = 690.0
 offset_bottom = 50.0
 
 [node name="name" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
+custom_minimum_size = Vector2(680, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 autowrap_mode = 3
 
 [node name="description" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
+custom_minimum_size = Vector2(680, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 autowrap_mode = 3
 
 [node name="affected_variables" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
+custom_minimum_size = Vector2(680, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
 
 [node name="probability" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
+custom_minimum_size = Vector2(680, 0)
 layout_mode = 2
-autowrap_mode = 3
+autowrap_mode = 2
 
 [node name="active" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
 
 [node name="total_duration" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
 
 [node name="phases" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
 
 [node name="excludes" type="Label" parent="main_tabs/events/event_info_panel/info_panel_container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
 
 [node name="requirements" type="RichTextLabel" parent="main_tabs/events/event_info_panel/info_panel_container"]
 layout_mode = 2
@@ -226,11 +231,13 @@ offset_right = 690.0
 offset_bottom = 50.0
 
 [node name="name" type="Label" parent="main_tabs/events/active_event_info/info_panel_container"]
+custom_minimum_size = Vector2(680, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 autowrap_mode = 3
 
 [node name="active" type="Label" parent="main_tabs/events/active_event_info/info_panel_container"]
+custom_minimum_size = Vector2(680, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 autowrap_mode = 3
@@ -812,7 +819,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="computer_company_list" type="VBoxContainer" parent="main_tabs/sales/contents"]
-custom_minimum_size = Vector2(310, 980)
+custom_minimum_size = Vector2(260, 980)
 layout_mode = 2
 
 [node name="computer_companies" type="Label" parent="main_tabs/sales/contents/computer_company_list"]
@@ -850,7 +857,7 @@ offset_bottom = 950.0
 clip_contents = true
 custom_minimum_size = Vector2(600, 1050)
 layout_mode = 0
-offset_left = 1320.0
+offset_left = 1120.0
 offset_right = 1920.0
 offset_bottom = 1050.0
 
@@ -859,7 +866,7 @@ custom_minimum_size = Vector2(580, 0)
 layout_mode = 0
 offset_left = 10.0
 offset_top = 10.0
-offset_right = 590.0
+offset_right = 790.0
 offset_bottom = 287.0
 
 [node name="name" type="Label" parent="main_tabs/rnd/rnd_info/content"]
@@ -867,6 +874,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 
 [node name="description" type="Label" parent="main_tabs/rnd/rnd_info/content"]
+custom_minimum_size = Vector2(780, 0)
 layout_mode = 2
 autowrap_mode = 3
 
@@ -876,7 +884,9 @@ bbcode_enabled = true
 fit_content = true
 
 [node name="duration" type="Label" parent="main_tabs/rnd/rnd_info/content"]
+custom_minimum_size = Vector2(780, 0)
 layout_mode = 2
+autowrap_mode = 3
 
 [node name="cost" type="Label" parent="main_tabs/rnd/rnd_info/content"]
 layout_mode = 2
@@ -929,7 +939,7 @@ layout_mode = 2
 [connection signal="pressed" from="main_tabs/resources/resource_overview/row1/cocoa" to="." method="load_resource_info" binds= ["cocoa"]]
 [connection signal="pressed" from="main_tabs/resources/resource_overview/row1/sugar" to="." method="load_resource_info" binds= ["sugar"]]
 [connection signal="pressed" from="main_tabs/resources/resource_overview/row2/milk_powder" to="." method="load_resource_info" binds= ["milk_powder"]]
-[connection signal="pressed" from="main_tabs/resources/resource_overview/row2/nuts" to="." method="load_resource_info" binds= [""]]
+[connection signal="pressed" from="main_tabs/resources/resource_overview/row2/nuts" to="." method="load_resource_info" binds= ["nuts"]]
 [connection signal="item_selected" from="main_tabs/resources/resource_overview/resource_info/ri_container/usage_sort/quality_sort_option" to="." method="change_sort"]
 [connection signal="button_clicked" from="main_tabs/resources/resource_overview/resource_info/ri_container/stored_batches" to="." method="discard_batch"]
 [connection signal="button_clicked" from="main_tabs/resources/rp_contracts/rc_info/container/contracts" to="." method="modify_contract"]
